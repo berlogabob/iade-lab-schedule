@@ -1,0 +1,37 @@
+name: Update schedule
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 */6 * * *" # every 6 hours (UTC)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-schedule
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv python install 3.12
+      - run: uv sync --locked
+      - run: uv run python tests/test_parse.py
+      # fetch.py exits non-zero before writing anything if the source looks broken,
+      # so the job fails and the published site keeps the last good version.
+      - run: uv run python scripts/fetch.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs rooms.txt
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update schedule"
+            git push
+          fi

@@ -1,0 +1,6 @@
+[project]
+name = "iade-lab-schedule"
+version = "0.1.0"
+description = "Static timetable and ICS calendar for the IADE Tech Lab"
+requires-python = ">=3.11"
+dependencies = []

@@ -1,0 +1,17 @@
+:root { color-scheme: light dark; --fg: #1a1a1a; --muted: #666; --bg: #fafaf7; --card: #fff; --line: #e3e1da; --accent: #b3261e; }
+@media (prefers-color-scheme: dark) { :root { --fg: #eee; --muted: #aaa; --bg: #161616; --card: #202020; --line: #333; --accent: #ff8a80; } }
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 42rem; padding: 1rem; font: 16px/1.4 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+h1 { margin: 0; font-size: 1.5rem; }
+.rooms, footer, article p { color: var(--muted); }
+.rooms { margin: .25rem 0 1rem; }
+nav { padding: .6rem 0; border-block: 1px solid var(--line); }
+nav a, nav strong { display: inline-block; padding: .3rem .1rem; }
+a { color: var(--accent); }
+h2 { margin: 2rem 0 .5rem; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+article { margin: 0 0 .6rem; padding: .75rem 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+article p { margin: .1rem 0; font-size: .9rem; overflow-wrap: anywhere; }
+article .time { color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
+article .course { color: var(--fg); font-size: 1.05rem; }
+.empty { margin: 2rem 0; color: var(--muted); }
+footer { margin-top: 3rem; font-size: .85rem; }
