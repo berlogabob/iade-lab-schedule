@@ -24,6 +24,13 @@ jobs:
       # fetch.py exits non-zero before writing anything if the source looks broken,
       # so the job fails and the published site keeps the last good version.
       - run: uv run python scripts/fetch.py
+      - name: Validate calendar file
+        run: >
+          uv run --with icalendar python -c "import icalendar;
+          c = icalendar.Calendar.from_ical(open('docs/calendar/lab.ics','rb').read());
+          ev = list(c.walk('VEVENT')); assert ev, 'no events';
+          assert all(e.decoded('DTSTART').tzinfo for e in ev), 'floating time';
+          print(len(ev), 'events ok')"
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
