@@ -13,11 +13,11 @@
 <nav><a href="today.html">Today</a> | <a href="week.html">This week</a> | <a href="index.html">All</a> | <strong>Filter</strong></nav>
 </header>
 <form id="filters" data-default-room="Lab. e Estudo de Jogos - Tech Lab (Oriente)">
-<label>Room / lab <select name="room"><option value="">any</option></select></label>
-<label>Professor <select name="teacher"><option value="">any</option></select></label>
-<label>Group <select name="group"><option value="">any</option></select></label>
-<label>Course <select name="course"><option value="">any</option></select></label>
-<label>Type <select name="type"><option value="">any</option></select></label>
+<label>Room / lab <input name="room" type="search" list="room-list" placeholder="any" autocomplete="off"></label><datalist id="room-list"></datalist>
+<label>Professor <input name="teacher" type="search" list="teacher-list" placeholder="any" autocomplete="off"></label><datalist id="teacher-list"></datalist>
+<label>Group <input name="group" type="search" list="group-list" placeholder="any" autocomplete="off"></label><datalist id="group-list"></datalist>
+<label>Course <input name="course" type="search" list="course-list" placeholder="any" autocomplete="off"></label><datalist id="course-list"></datalist>
+<label>Type <input name="type" type="search" list="type-list" placeholder="any" autocomplete="off"></label><datalist id="type-list"></datalist>
 <label>From <input name="from" type="date"></label>
 <label>To <input name="to" type="date"></label>
 </form>
@@ -27,7 +27,7 @@
 <p class="empty">Loading…</p>
 </main>
 <footer>
-<p>Data last changed: 2026-09-17 17:08</p>
+<p>Data last changed: 2026-09-17 18:12</p>
 <p><a href="calendar/lab.ics">Subscribe to calendar (.ics)</a> · <a href="https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/">Official IADE timetable</a></p>
 <p>Unofficial timetable view. Always verify critical scheduling information with the official IADE timetable.</p>
 </footer>

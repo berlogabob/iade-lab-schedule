@@ -289,11 +289,11 @@ def render_ics(lessons, stamp):
 
 
 FILTER_FORM = """<form id="filters" data-default-room="{room}">
-<label>Room / lab <select name="room"><option value="">any</option></select></label>
-<label>Professor <select name="teacher"><option value="">any</option></select></label>
-<label>Group <select name="group"><option value="">any</option></select></label>
-<label>Course <select name="course"><option value="">any</option></select></label>
-<label>Type <select name="type"><option value="">any</option></select></label>
+<label>Room / lab <input name="room" type="search" list="room-list" placeholder="any" autocomplete="off"></label><datalist id="room-list"></datalist>
+<label>Professor <input name="teacher" type="search" list="teacher-list" placeholder="any" autocomplete="off"></label><datalist id="teacher-list"></datalist>
+<label>Group <input name="group" type="search" list="group-list" placeholder="any" autocomplete="off"></label><datalist id="group-list"></datalist>
+<label>Course <input name="course" type="search" list="course-list" placeholder="any" autocomplete="off"></label><datalist id="course-list"></datalist>
+<label>Type <input name="type" type="search" list="type-list" placeholder="any" autocomplete="off"></label><datalist id="type-list"></datalist>
 <label>From <input name="from" type="date"></label>
 <label>To <input name="to" type="date"></label>
 </form>

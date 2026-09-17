@@ -14,17 +14,37 @@ function el(tag, text, cls) {
   return node;
 }
 
-function fill(select, values) {
-  for (const v of [...new Set(values)].filter(Boolean).sort((a, b) => a.localeCompare(b)))
-    select.append(new Option(v, v));
+const FIELDS = { room: l => l.rooms, teacher: l => l.teachers, group: l => l.groups, course: l => [l.course], type: l => [l.type] };
+const options = {};
+
+function fill(name, lessons) {
+  options[name] = new Set(lessons.flatMap(FIELDS[name]).filter(Boolean));
+  const list = document.getElementById(name + "-list");
+  list.append(new Option("any"));
+  for (const v of [...options[name]].sort((a, b) => a.localeCompare(b))) list.append(new Option(v));
+}
+
+// A value picked from the list matches exactly; typed text matches anywhere, ignoring case ("lab" -> every lab).
+function matches(name, values, q) {
+  if (!q || q === "any") return true;
+  if (options[name].has(q)) return values.includes(q);
+  q = q.toLowerCase();
+  return values.some(v => v.toLowerCase().includes(q));
+}
+
+// Empty the box on focus so the whole list shows; put the old value back if nothing was typed.
+function openList(input) {
+  let old, typed;
+  input.addEventListener("focus", () => { old = input.value; typed = false; input.placeholder = old || "any"; input.value = ""; });
+  input.addEventListener("input", () => { typed = true; });
+  input.addEventListener("blur", () => { if (!typed) input.value = old; input.placeholder = "any"; });
 }
 
 function show(lessons) {
   const f = Object.fromEntries(new FormData(form));
   const hit = lessons.filter(l =>
-    (!f.room || l.rooms.includes(f.room)) && (!f.teacher || l.teachers.includes(f.teacher)) &&
-    (!f.group || l.groups.includes(f.group)) && (!f.course || l.course === f.course) &&
-    (!f.type || l.type === f.type) && (!f.from || l.date >= f.from) && (!f.to || l.date <= f.to));
+    Object.keys(FIELDS).every(name => matches(name, FIELDS[name](l), f[name])) &&
+    (!f.from || l.date >= f.from) && (!f.to || l.date <= f.to));
   const out = [];
   let section, current;
   for (const l of hit.slice(0, MAX)) {
@@ -44,16 +64,12 @@ function show(lessons) {
   if (!hit.length) out.push(el("p", "No lessons match these filters.", "empty"));
   if (hit.length > MAX) out.push(el("p", `Showing the first ${MAX} of ${hit.length} lessons. Narrow the filters to see more.`, "empty"));
   main.replaceChildren(...out);
-  const params = new URLSearchParams(Object.entries(f).filter(([k, v]) => v || k === "room"));
+  const params = new URLSearchParams(Object.entries(f).filter(([k, v]) => (v && v !== "any") || k === "room").map(([k, v]) => [k, v === "any" ? "" : v]));
   history.replaceState(null, "", "?" + params); // room always present, so "any room" survives a reload
 }
 
 fetch("all.json").then(r => r.json()).then(lessons => {
-  fill(form.elements.room, lessons.flatMap(l => l.rooms));
-  fill(form.elements.teacher, lessons.flatMap(l => l.teachers));
-  fill(form.elements.group, lessons.flatMap(l => l.groups));
-  fill(form.elements.course, lessons.map(l => l.course));
-  fill(form.elements.type, lessons.map(l => l.type));
+  for (const name in FIELDS) fill(name, lessons), openList(form.elements[name]);
   const params = new URLSearchParams(location.search);
   if (!params.size) params.set("room", form.dataset.defaultRoom), params.set("from", today);
   for (const [k, v] of params) if (form.elements[k]) form.elements[k].value = v;
