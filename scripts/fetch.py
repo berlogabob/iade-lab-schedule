@@ -27,6 +27,8 @@ DOCS = ROOT / "docs"
 DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 LINK_RE = re.compile(r'href="(turma_[^"?]+_\d*?(\d{8})\.html)')  # name ends in first+last week
 TIME_RE = re.compile(r"^(\d{2}:\d{2})-(\d{2}:\d{2})$")
+TREE_RE = re.compile(r"<li>IADE:\s*([^<]+?)\s*<ul>|<li>([A-Z0-9]+)<ul>")  # programme heading | group code
+DEGREES = [("Licenciatura", "Bachelor"), ("Mestrado", "Master"), ("Doutoramento", "PhD")]
 
 
 # ---------- fetch ----------
@@ -41,6 +43,21 @@ def get(url, tries=3):
             if i == tries - 1:
                 raise
             time.sleep(2 * (i + 1))
+
+
+def group_programmes(index_html):
+    """Index tree 'IADE: Mestrado em X' > Ano 1 > ... > 'MCIA001N01' -> {"MCIA001N01": "Mestrado em X"}."""
+    out, programme = {}, None
+    for heading, group in TREE_RE.findall(index_html):
+        if heading:
+            programme = heading
+        elif programme:
+            out[group] = programme
+    return out
+
+
+def degree(programme):
+    return next((label for word, label in DEGREES if word in programme), "Other")
 
 
 def find_pages(index_html, today):
@@ -289,6 +306,8 @@ def render_ics(lessons, stamp):
 
 
 FILTER_FORM = """<form id="filters" data-default-room="{room}">
+<label>Degree <input name="degree" type="search" list="degree-list" placeholder="any" autocomplete="off"></label><datalist id="degree-list"></datalist>
+<label>Programme <input name="programme" type="search" list="programme-list" placeholder="any" autocomplete="off"></label><datalist id="programme-list"></datalist>
 <label>Room / lab <input name="room" type="search" list="room-list" placeholder="any" autocomplete="off"></label><datalist id="room-list"></datalist>
 <label>Professor <input name="teacher" type="search" list="teacher-list" placeholder="any" autocomplete="off"></label><datalist id="teacher-list"></datalist>
 <label>Group <input name="group" type="search" list="group-list" placeholder="any" autocomplete="off"></label><datalist id="group-list"></datalist>
@@ -305,7 +324,8 @@ FILTER_FORM = """<form id="filters" data-default-room="{room}">
 def main():
     now = datetime.now(TZ)
     today = now.date()
-    pages = find_pages(get(BASE), today)
+    index_html = get(BASE)
+    pages = find_pages(index_html, today)
     print(f"Pages found: {len(pages)}")
     if not pages:
         sys.exit("No timetable pages found. Source format may have changed.")
@@ -335,6 +355,11 @@ def main():
 
     lab = lab_lessons(all_lessons)
     everything = all_lessons_unique(all_lessons)
+    programmes = group_programmes(index_html)
+    for l in everything:
+        l["programmes"] = sorted({programmes[g] for g in l["groups"] if g in programmes})
+        l["degrees"] = sorted({degree(x) for x in l["programmes"]})
+    print(f"Lessons without a programme: {sum(not l['programmes'] for l in everything)}")
     all_json = "[\n" + ",\n".join(json.dumps(l, ensure_ascii=False, separators=(",", ":"))
                                    for l in everything) + "\n]\n"
     all_sha = hashlib.sha1(all_json.encode()).hexdigest()

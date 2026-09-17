@@ -14,7 +14,7 @@ function el(tag, text, cls) {
   return node;
 }
 
-const FIELDS = { room: l => l.rooms, teacher: l => l.teachers, group: l => l.groups, course: l => [l.course], type: l => [l.type] };
+const FIELDS = { degree: l => l.degrees, programme: l => l.programmes, room: l => l.rooms, teacher: l => l.teachers, group: l => l.groups, course: l => [l.course], type: l => [l.type] };
 const options = {};
 
 function fill(name, lessons) {
@@ -24,12 +24,14 @@ function fill(name, lessons) {
   for (const v of [...options[name]].sort((a, b) => a.localeCompare(b))) list.append(new Option(v));
 }
 
+const plain = s => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase(); // "computacao" finds "Computação"
+
 // A value picked from the list matches exactly; typed text matches anywhere, ignoring case ("lab" -> every lab).
 function matches(name, values, q) {
   if (!q || q === "any") return true;
   if (options[name].has(q)) return values.includes(q);
-  q = q.toLowerCase();
-  return values.some(v => v.toLowerCase().includes(q));
+  q = plain(q);
+  return values.some(v => plain(v).includes(q));
 }
 
 // Empty the box on focus so the whole list shows; put the old value back if nothing was typed.

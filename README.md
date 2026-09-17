@@ -14,7 +14,7 @@ Static timetable and calendar feed for the IADE game lab, **Lab. e Estudo de Jog
 `scripts/fetch.py` reads the official index page and downloads every class timetable page from the current week onward. It parses the weekly grids, keeps lessons held in the rooms listed in `LAB_ROOMS`, and writes:
 
 - `docs/index.html`, `docs/today.html` and `docs/week.html`, which are plain HTML and CSS with no JavaScript
-- `docs/filter.html`, which filters every IADE lesson (`docs/all.json`) by room or lab, professor, group, course, type and dates. It is the only page that uses JavaScript (`docs/filter.js`), and it keeps the chosen filters in the URL, so a view like `filter.html?teacher=José+Graça` can be bookmarked or left open on a TV
+- `docs/filter.html`, which filters every IADE lesson (`docs/all.json`) by degree (Bachelor, Master, PhD), programme, room or lab, professor, group, course, type and dates. Programmes come from the headings in the official index page. It is the only page that uses JavaScript (`docs/filter.js`), and it keeps the chosen filters in the URL, so a view like `filter.html?teacher=José+Graça` can be bookmarked or left open on a TV
 - `docs/calendar/lab.ics`
 - `docs/lessons.json`, which holds the data and is used to detect changes
 - `rooms.txt`, which lists every room name on the source site

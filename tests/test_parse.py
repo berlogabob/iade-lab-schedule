@@ -32,6 +32,20 @@ assert len(ls) % 10 == 0
 idx = 'href="turma_A_1_20260921.html?1" href="turma_B_2_2026092120261005.html?1" href="turma_C_3_20260901.html?1"'
 assert fetch.find_pages(idx, datetime(2026, 9, 30).date()) == ["turma_B_2_2026092120261005.html"]
 
+# index tree -> programme per group, and degree level
+tree = """<li>IADE: Mestrado em Computação Criativa e Inteligência Artificial<ul>
+<li>Ano 1<ul>
+<li>IADE M-CIA 1ºS<ul>
+<li>MCIA001N01<ul>
+<li><a href="turma_MCIA001N01_452_20260907.html">Semanas</a></li>
+<li>IADE: Licenciatura em Desenvolvimento de Jogos<ul>
+<li>LDJO001D01<ul>"""
+progs = fetch.group_programmes(tree)
+assert progs == {"MCIA001N01": "Mestrado em Computação Criativa e Inteligência Artificial",
+                 "LDJO001D01": "Licenciatura em Desenvolvimento de Jogos"}, progs
+assert [fetch.degree(x) for x in progs.values()] == ["Master", "Bachelor"]
+assert fetch.degree("Erasmus 2022") == "Other"
+
 # lab filter merges groups of the same lesson and ignores other rooms
 room = fetch.LAB_ROOMS[0]
 base = {"date": "2026-10-01", "start": "09:00", "end": "12:00", "course": "X", "teachers": [], "type": "P",
