@@ -1,17 +1,29 @@
 :root { color-scheme: light dark; --fg: #1a1a1a; --muted: #666; --bg: #fafaf7; --card: #fff; --line: #e3e1da; --accent: #b3261e; }
 @media (prefers-color-scheme: dark) { :root { --fg: #eee; --muted: #aaa; --bg: #161616; --card: #202020; --line: #333; --accent: #ff8a80; } }
 * { box-sizing: border-box; }
-body { margin: 0 auto; max-width: 42rem; padding: 1rem; font: 16px/1.4 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
-h1 { margin: 0; font-size: 1.5rem; }
+/* 16:9 screens: full width, type scales with viewport width, days laid out as columns */
+html { font-size: clamp(16px, 1.15vw, 44px); }
+body { margin: 0; padding: 1rem 1.5rem; font: 1rem/1.35 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1.5rem; padding-bottom: .6rem; border-bottom: 1px solid var(--line); }
+h1 { margin: 0; font-size: 1.6rem; }
 .rooms, footer, article p { color: var(--muted); }
-.rooms { margin: .25rem 0 1rem; }
-nav { padding: .6rem 0; border-block: 1px solid var(--line); }
+.rooms { margin: 0; }
+nav { margin-left: auto; }
 nav a, nav strong { display: inline-block; padding: .3rem .1rem; }
 a { color: var(--accent); }
-h2 { margin: 2rem 0 .5rem; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
-article { margin: 0 0 .6rem; padding: .75rem 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+main { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0 1rem; }
+h2 { margin: 1rem 0 .5rem; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+article { margin: 0 0 .6rem; padding: .6rem .8rem; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
 article p { margin: .1rem 0; font-size: .9rem; overflow-wrap: anywhere; }
 article .time { color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
 article .course { color: var(--fg); font-size: 1.05rem; }
-.empty { margin: 2rem 0; color: var(--muted); }
-footer { margin-top: 3rem; font-size: .85rem; }
+/* single day (Today): spread its lessons across the width */
+main > section:only-child { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0 1rem; align-items: start; }
+main > section:only-child h2 { grid-column: 1 / -1; }
+.empty { grid-column: 1 / -1; margin: 2rem 0; color: var(--muted); }
+footer { margin-top: 2rem; font-size: .75rem; }
+footer p { margin: .2rem 0; }
+/* compact cards so a full day fits one screen height: room is already in the header, meta on one line */
+article .room { display: none; }
+article p:not(.time, .course, .room) { display: inline; }
+article p:not(.time, .course, .room) + p:not(.room)::before { content: " · "; }
