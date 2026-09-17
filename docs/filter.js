@@ -17,14 +17,28 @@ function el(tag, text, cls) {
 const FIELDS = { degree: l => l.degrees, programme: l => l.programmes, room: l => l.rooms, teacher: l => l.teachers, group: l => l.groups, course: l => [l.course], type: l => [l.type] };
 const options = {};
 
-function fill(name, lessons) {
-  options[name] = new Set(lessons.flatMap(FIELDS[name]).filter(Boolean));
-  const list = document.getElementById(name + "-list");
-  list.append(new Option("any"));
-  for (const v of [...options[name]].sort((a, b) => a.localeCompare(b))) list.append(new Option(v));
+const shown = {};
+
+// Smart lists: each field only offers values that still have lessons under all the other filters.
+function updateLists(lessons, pass) {
+  for (const name in FIELDS) {
+    const values = new Set();
+    lessons.forEach((l, i) => {
+      if (pass[i].every((ok, j) => ok || NAMES[j] === name)) FIELDS[name](l).forEach(v => v && values.add(v));
+    });
+    const sorted = [...values].sort((a, b) => a.localeCompare(b));
+    if (shown[name] === sorted.join("\n")) continue; // don't rebuild a list that didn't change
+    shown[name] = sorted.join("\n");
+    document.getElementById(name + "-list").replaceChildren(new Option("any"), ...sorted.map(v => new Option(v)));
+  }
 }
 
-const plain = s => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase(); // "computacao" finds "Computação"
+const NAMES = Object.keys(FIELDS);
+const plainCache = new Map();
+const plain = s => { // "computacao" finds "Computação"
+  if (!plainCache.has(s)) plainCache.set(s, s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase());
+  return plainCache.get(s);
+};
 
 // A value picked from the list matches exactly; typed text matches anywhere, ignoring case ("lab" -> every lab).
 function matches(name, values, q) {
@@ -44,9 +58,11 @@ function openList(input) {
 
 function show(lessons) {
   const f = Object.fromEntries(new FormData(form));
-  const hit = lessons.filter(l =>
-    Object.keys(FIELDS).every(name => matches(name, FIELDS[name](l), f[name])) &&
-    (!f.from || l.date >= f.from) && (!f.to || l.date <= f.to));
+  // pass[i][j]: lesson i passes field j (the date range counts as one more field)
+  const pass = lessons.map(l => [...NAMES.map(name => matches(name, FIELDS[name](l), f[name])),
+    (!f.from || l.date >= f.from) && (!f.to || l.date <= f.to)]);
+  const hit = lessons.filter((l, i) => pass[i].every(Boolean));
+  updateLists(lessons, pass);
   const out = [];
   let section, current;
   for (const l of hit.slice(0, MAX)) {
@@ -71,7 +87,10 @@ function show(lessons) {
 }
 
 fetch("all.json").then(r => r.json()).then(lessons => {
-  for (const name in FIELDS) fill(name, lessons), openList(form.elements[name]);
+  for (const name in FIELDS) {
+    options[name] = new Set(lessons.flatMap(FIELDS[name]).filter(Boolean));
+    openList(form.elements[name]);
+  }
   const params = new URLSearchParams(location.search);
   if (!params.size) params.set("room", form.dataset.defaultRoom), params.set("from", today);
   for (const [k, v] of params) if (form.elements[k]) form.elements[k].value = v;
