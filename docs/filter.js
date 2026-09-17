@@ -1,12 +1,15 @@
-// Filter page: loads all.json, filters in the browser, keeps filters in the URL (?room=...&teacher=...).
+// Filter page: loads all.json, filters in the browser, keeps filters and the view in the URL.
+import { DAYS, MONTHS, periodRange, shift, periodLabel, monthCells, layout, startMinutes as minutes }
+  from "./calendar.js";
+
 const form = document.getElementById("filters");
 const main = document.querySelector("main");
 const MAX = 300; // ponytail: render cap, add paging if people need to scroll past it
-const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
-  "October", "November", "December"];
 const box = document.getElementById("filters-box");
 const dateNav = document.querySelectorAll("nav [data-range]");
+const viewNav = document.querySelectorAll("nav [data-view]");
+const periodBox = document.getElementById("period");
+let view = "list", anchor = "";
 const favList = document.getElementById("fav-list");
 const favSave = document.getElementById("fav-save");
 const MAX_FAVS = 5;
@@ -76,8 +79,19 @@ function save(key, value) {
 function apply(lessons, query) {
   const params = new URLSearchParams(query);
   for (const input of form.elements) input.value = params.get(input.name) ?? "";
+  view = ["day", "week", "month"].includes(params.get("view")) ? params.get("view") : "list";
+  anchor = /^\d{4}-\d\d-\d\d$/.test(params.get("date") ?? "") ? params.get("date") : today;
   show(lessons);
 }
+
+const datesOf = (from, to) => { // every ISO date from..to
+  const out = [];
+  for (let d = new Date(from + "T12:00:00Z"); ; d.setUTCDate(d.getUTCDate() + 1)) {
+    const iso = d.toISOString().slice(0, 10);
+    if (iso > to) return out;
+    out.push(iso);
+  }
+};
 
 function describe(f, dates) {
   const parts = Object.entries(f).filter(([k, v]) => v && v !== "any" && !(dates && (k === "from" || k === "to")))
@@ -108,6 +122,7 @@ function saveFav(lessons) {
   const favs = load("favs", []);
   const params = new URLSearchParams(location.search);
   if (params.get("from") === today) params.delete("from"); // "from today" should stay today, not freeze the date
+  params.delete("date"); // a favourite opens on the period around today
   const query = params.toString();
   if (favs.length >= MAX_FAVS || favs.some(fav => fav.query === query)) return;
   const name = prompt("Name this favourite", describe(Object.fromEntries(params)) || "Everything");
@@ -126,21 +141,22 @@ function range(name) {
   return [today, sunday.toISOString().slice(0, 10)];
 }
 
-function show(lessons) {
-  const f = Object.fromEntries(new FormData(form));
-  // pass[i][j]: lesson i passes field j (the date range counts as one more field)
-  const pass = lessons.map(l => [...NAMES.map(name => matches(name, FIELDS[name](l), f[name])),
-    (!f.from || l.date >= f.from) && (!f.to || l.date <= f.to)]);
-  const hit = lessons.filter((l, i) => pass[i].every(Boolean));
-  updateLists(lessons, pass);
+const dayName = date => {
+  const d = new Date(date + "T12:00:00Z");
+  return `${DAYS[d.getUTCDay()]}, ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+};
+
+const details = l => [l.course, l.rooms.join(", "), l.teachers.join(", "), l.groups.join(", "), l.type]
+  .filter(Boolean).join(" · ");
+
+function renderList(hit) {
   const out = [];
   let section, current;
   for (const l of hit.slice(0, MAX)) {
     if (l.date !== current) {
       current = l.date;
-      const d = new Date(l.date + "T12:00:00Z");
       section = el("section");
-      section.append(el("h2", `${DAYS[d.getUTCDay()]}, ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`));
+      section.append(el("h2", dayName(l.date)));
       out.push(section);
     }
     const a = el("article");
@@ -149,10 +165,98 @@ function show(lessons) {
       if (m) a.append(el("p", m));
     section.append(a);
   }
-  if (!hit.length) out.push(el("p", "No lessons match these filters.", "empty"));
   if (hit.length > MAX) out.push(el("p", `Showing the first ${MAX} of ${hit.length} lessons. Narrow the filters to see more.`, "empty"));
+  return out;
+}
+
+// Day and week: hour rows down the side, one column per day, overlapping lessons side by side.
+function renderGrid(hit, dates) {
+  let first = 8 * 60, last = 20 * 60;
+  for (const l of hit) { first = Math.min(first, minutes(l.start)); last = Math.max(last, minutes(l.end)); }
+  first = Math.floor(first / 60) * 60;
+  last = Math.ceil(last / 60) * 60;
+
+  const busy = hit.length > 150 // ponytail: a whole campus week is unreadable as a grid
+    ? el("p", `${hit.length} lessons in this period. Narrow the filters to read the grid.`, "empty")
+    : null;
+
+  const cal = el("div", "", "cal");
+  cal.style.setProperty("--days", dates.length);
+  cal.style.setProperty("--rows", (last - first) / 60);
+
+  const head = el("div", "", "cal-head");
+  head.append(el("div", "", "cal-corner"));
+  for (const date of dates) {
+    const d = new Date(date + "T12:00:00Z");
+    head.append(el("div", `${DAYS[d.getUTCDay()].slice(0, 3)} ${d.getUTCDate()}`,
+      "cal-day" + (date === today ? " on" : "")));
+  }
+
+  const body = el("div", "", "cal-body");
+  const gutter = el("div", "", "cal-gutter");
+  for (let h = first / 60; h < last / 60; h++) gutter.append(el("div", `${String(h).padStart(2, "0")}:00`, "cal-hour"));
+  body.append(gutter);
+  for (const date of dates) {
+    const col = el("div", "", "cal-col" + (date === today ? " on" : ""));
+    for (const { lesson, top, height, left, width } of layout(hit.filter(l => l.date === date), first, last)) {
+      const ev = el("div", "", "ev");
+      ev.style.cssText = `top:${top}%;height:${height}%;left:${left}%;width:${width}%`;
+      ev.title = details(lesson);
+      ev.append(el("span", `${lesson.start}–${lesson.end}`, "ev-time"), el("span", lesson.course, "ev-course"),
+        el("span", [lesson.rooms.join(", "), lesson.teachers.join(", ")].filter(Boolean).join(" · "), "ev-meta"));
+      col.append(ev);
+    }
+    body.append(col);
+  }
+  cal.append(head, body);
+  return busy ? [busy, cal] : [cal];
+}
+
+function renderMonth(hit, lessons) {
+  const cells = monthCells(anchor);
+  const [from, to] = periodRange("month", anchor);
+  const byDate = new Map();
+  for (const l of hit) byDate.set(l.date, [...(byDate.get(l.date) ?? []), l]);
+
+  const grid = el("div", "", "month");
+  for (const name of [1, 2, 3, 4, 5, 6, 0]) grid.append(el("div", DAYS[name].slice(0, 3), "month-head"));
+  for (const date of cells) {
+    const cell = el("div", "", "month-cell" + (date < from || date > to ? " other" : "") + (date === today ? " on" : ""));
+    cell.append(el("div", String(Number(date.slice(8))), "month-num"));
+    const day = (byDate.get(date) ?? []).sort((a, b) => a.start.localeCompare(b.start));
+    for (const l of day.slice(0, 3)) {
+      const line = el("div", "", "month-ev");
+      line.title = details(l);
+      line.append(el("span", l.start, "ev-time"), el("span", l.course, "ev-course"));
+      cell.append(line);
+    }
+    if (day.length > 3) cell.append(el("div", `+${day.length - 3} more`, "month-more"));
+    cell.onclick = () => { view = "day"; anchor = date; show(lessons); };
+    grid.append(cell);
+  }
+  return [grid];
+}
+
+function show(lessons) {
+  const f = Object.fromEntries(new FormData(form));
+  const [from, to] = view === "list" ? [f.from, f.to] : periodRange(view, anchor);
+  // pass[i][j]: lesson i passes field j (the date range counts as one more field)
+  const pass = lessons.map(l => [...NAMES.map(name => matches(name, FIELDS[name](l), f[name])),
+    (!from || l.date >= from) && (!to || l.date <= to)]);
+  const hit = lessons.filter((l, i) => pass[i].every(Boolean));
+  updateLists(lessons, pass);
+  let out = view === "list" ? renderList(hit)
+    : view === "month" ? renderMonth(hit, lessons)
+      : renderGrid(hit, view === "day" ? [anchor] : datesOf(from, to));
+  if (!hit.length && view === "list") out = [el("p", "No lessons match these filters.", "empty")];
   main.replaceChildren(...out);
+  for (const b of viewNav) b.classList.toggle("on", b.dataset.view === view);
+  for (const label of document.querySelectorAll(".date-field")) label.hidden = view !== "list";
+  document.getElementById("ranges").hidden = view !== "list";
+  periodBox.hidden = view === "list";
+  if (view !== "list") document.getElementById("period-label").textContent = periodLabel(view, anchor);
   const params = new URLSearchParams(Object.entries(f).filter(([k, v]) => (v && v !== "any") || k === "room").map(([k, v]) => [k, v === "any" ? "" : v]));
+  if (view !== "list") params.set("view", view), params.set("date", anchor);
   history.replaceState(null, "", "?" + params); // room always present, so "any room" survives a reload
   const preset = ["today", "week", "all"].find(r => range(r).join() === [f.from, f.to].join());
   const active = describe(f, preset && preset !== "all" && (preset === "today" ? "Today" : "This week"));
@@ -174,6 +278,14 @@ fetch("all.json").then(r => r.json()).then(lessons => {
     [form.from.value, form.to.value] = range(b.dataset.range);
     show(lessons);
   };
+  for (const b of viewNav) b.onclick = () => {
+    if (view === "list" && b.dataset.view !== "list" && form.from.value) anchor = form.from.value;
+    view = b.dataset.view;
+    show(lessons);
+  };
+  document.getElementById("prev").onclick = () => { anchor = shift(view, anchor, -1); show(lessons); };
+  document.getElementById("next").onclick = () => { anchor = shift(view, anchor, 1); show(lessons); };
+  document.getElementById("now").onclick = () => { anchor = today; show(lessons); };
   box.open = load("filtersOpen", true);
   box.addEventListener("toggle", () => save("filtersOpen", box.open));
   form.addEventListener("input", () => show(lessons));

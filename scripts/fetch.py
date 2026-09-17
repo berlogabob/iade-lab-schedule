@@ -308,9 +308,20 @@ def render_ics(lessons, stamp):
     return "\r\n".join(fold(x) for x in lines) + "\r\n"
 
 
-DATE_NAV = ('<button type="button" data-range="today">Today</button>'
+DATE_NAV = ('<span id="views">'
+            '<button type="button" data-view="list">List</button>'
+            '<button type="button" data-view="day">Day</button>'
+            '<button type="button" data-view="week">Week</button>'
+            '<button type="button" data-view="month">Month</button></span>'
+            '<span id="ranges">'
+            '<button type="button" data-range="today">Today</button>'
             '<button type="button" data-range="week">This week</button>'
-            '<button type="button" data-range="all">All dates</button>')
+            '<button type="button" data-range="all">All dates</button></span>'
+            '<span id="period" hidden>'
+            '<button type="button" id="prev" aria-label="Previous">\u2039</button>'
+            '<button type="button" id="now">Today</button>'
+            '<button type="button" id="next" aria-label="Next">\u203a</button>'
+            '<span id="period-label"></span></span>')
 
 FILTER_FORM = """<details id="filters-box" open>
 <summary><span id="summary-text">Filters</span><span id="favs"><span id="fav-list"></span><button type="button" id="fav-save">☆ Save as favourite</button></span></summary>
@@ -322,12 +333,12 @@ FILTER_FORM = """<details id="filters-box" open>
 <label>Group <span class="box"><input name="group" list="group-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Group">×</button></span></label><datalist id="group-list"></datalist>
 <label>Course <span class="box"><input name="course" list="course-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Course">×</button></span></label><datalist id="course-list"></datalist>
 <label>Type <span class="box"><input name="type" list="type-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Type">×</button></span></label><datalist id="type-list"></datalist>
-<label>From <input name="from" type="date"></label>
-<label>To <input name="to" type="date"></label>
+<label class="date-field">From <input name="from" type="date"></label>
+<label class="date-field">To <input name="to" type="date"></label>
 </form>
 </details>
 <noscript><p class="empty">Filters need JavaScript. Use Today, This week or All instead.</p></noscript>
-<script src="filter.js" defer></script>
+<script type="module" src="filter.js"></script>
 """
 
 # old address of the filter page; keeps bookmarked filter links working

@@ -14,7 +14,7 @@ Static timetable for every IADE class, filterable by degree, programme, room, pr
 `scripts/fetch.py` reads the official index page and downloads every class timetable page from the current week onward. It parses the weekly grids, keeps lessons held in the rooms listed in `LAB_ROOMS`, and writes:
 
 - `docs/today.html`, `docs/week.html` and `docs/all.html`, which show the lab only and are plain HTML and CSS with no JavaScript
-- `docs/index.html`, the main page, which filters every IADE lesson (`docs/all.json`) by degree (Bachelor, Master, PhD), programme, room or lab, professor, group, course, type and dates. Programmes come from the headings in the official index page. It is the only page that uses JavaScript (`docs/filter.js`), and it keeps the chosen filters in the URL, so a view like `?teacher=José+Graça` can be bookmarked or left open on a TV. Up to 5 filter sets can be saved as favourites (stored in the browser), and the filter block can be collapsed. `filter.html` redirects there for old links
+- `docs/index.html`, the main page, which filters every IADE lesson (`docs/all.json`) by degree (Bachelor, Master, PhD), programme, room or lab, professor, group, course, type and dates. Programmes come from the headings in the official index page. It shows results as a list or as a day, week or month calendar grid (`view=day|week|month` and `date=YYYY-MM-DD` in the address). It is the only page that uses JavaScript (`docs/filter.js`, with the date and overlap maths in `docs/calendar.js`), and it keeps the chosen filters in the URL, so a view like `?teacher=José+Graça` can be bookmarked or left open on a TV. Up to 5 filter sets can be saved as favourites (stored in the browser), and the filter block can be collapsed. `filter.html` redirects there for old links
 - `docs/calendar/lab.ics`
 - `docs/lessons.json`, which holds the data and is used to detect changes
 - `rooms.txt`, which lists every room name on the source site
@@ -26,6 +26,7 @@ GitHub Actions runs it every 6 hours and commits only when output changes. If th
 ```bash
 uv sync
 uv run python tests/test_parse.py
+node tests/test_calendar.mjs
 uv run python scripts/fetch.py
 open docs/today.html
 ```

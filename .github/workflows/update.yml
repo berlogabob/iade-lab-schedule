@@ -21,6 +21,7 @@ jobs:
       - run: uv python install 3.12
       - run: uv sync --locked
       - run: uv run python tests/test_parse.py
+      - run: node tests/test_calendar.mjs
       # fetch.py exits non-zero before writing anything if the source looks broken,
       # so the job fails and the published site keeps the last good version.
       - run: uv run python scripts/fetch.py
