@@ -20,7 +20,8 @@ BASE = "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/"
 LAB_ROOMS = [
     "Lab. e Estudo de Jogos - Tech Lab (Oriente)",
 ]
-SITE_TITLE = "IADE Lab Schedule"
+SITE_TITLE = "IADE Schedule"
+CAL_TITLE = "IADE Lab Schedule"  # the .ics still covers the lab only
 TZ = ZoneInfo("Europe/Lisbon")
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -203,10 +204,13 @@ def e(s):
     return html.escape(s, quote=True)
 
 
-def render(title, lessons, active, updated, empty_msg, before_main=""):
-    nav = " | ".join(
-        f'<strong>{label}</strong>' if href == active else f'<a href="{href}">{label}</a>'
-        for href, label in [("index.html", "Filters"), ("today.html", "Today"), ("week.html", "This week"), ("all.html", "All")])
+def render(title, lessons, active, updated, empty_msg, before_main="", nav=""):
+    if not nav:  # lab-only pages: back to the filters, plus the other lab views
+        nav = " · ".join(
+            f'<strong>{label}</strong>' if href == active else f'<a href="{href}">{label}</a>'
+            for href, label in [("index.html", "\u2190 Filters"), ("today.html", "Lab today"),
+                                ("week.html", "Lab this week"), ("all.html", "Lab all")])
+    subtitle = "" if active == "index.html" else f'<p class="rooms">{e(", ".join(LAB_ROOMS))}</p>\n'
     body, current = [], None
     for l in lessons:
         if l["date"] != current:
@@ -235,16 +239,15 @@ def render(title, lessons, active, updated, empty_msg, before_main=""):
 </head>
 <body>
 <header>
-<h1>{SITE_TITLE}</h1>
-<p class="rooms">{e(", ".join(LAB_ROOMS))}</p>
-<nav>{nav}</nav>
+<h1><a href="./">{SITE_TITLE}</a></h1>
+{subtitle}<nav>{nav}</nav>
 </header>
 {before_main}<main>
 {chr(10).join(body)}
 </main>
 <footer>
 <p>Data last changed: {updated}</p>
-<p><a href="calendar/lab.ics">Subscribe to calendar (.ics)</a> · <a href="{BASE}">Official IADE timetable</a></p>
+<p>Lab pages: <a href="today.html">today</a> · <a href="week.html">this week</a> · <a href="all.html">all</a> · <a href="calendar/lab.ics">calendar (.ics)</a> · <a href="{BASE}">official IADE timetable</a></p>
 <p>Unofficial timetable view. Always verify critical scheduling information with the official IADE timetable.</p>
 </footer>
 </body>
@@ -289,7 +292,7 @@ def fold(line):
 
 def render_ics(lessons, stamp):
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//iade-lab-schedule//EN", "CALSCALE:GREGORIAN",
-             "METHOD:PUBLISH", f"X-WR-CALNAME:{SITE_TITLE}", "X-WR-TIMEZONE:Europe/Lisbon",
+             "METHOD:PUBLISH", f"X-WR-CALNAME:{CAL_TITLE}", "X-WR-TIMEZONE:Europe/Lisbon",
              *VTIMEZONE.split("\n")]
     for l in lessons:
         d = l["date"].replace("-", "")
@@ -305,8 +308,12 @@ def render_ics(lessons, stamp):
     return "\r\n".join(fold(x) for x in lines) + "\r\n"
 
 
-FILTER_FORM = """<div id="favs"><span id="fav-list"></span><button type="button" id="fav-save">☆ Save as favourite</button></div>
-<details id="filters-box" open><summary>Filters</summary>
+DATE_NAV = ('<button type="button" data-range="today">Today</button>'
+            '<button type="button" data-range="week">This week</button>'
+            '<button type="button" data-range="all">All dates</button>')
+
+FILTER_FORM = """<details id="filters-box" open>
+<summary><span id="summary-text">Filters</span><span id="favs"><span id="fav-list"></span><button type="button" id="fav-save">☆ Save as favourite</button></span></summary>
 <form id="filters" data-default-room="{room}">
 <label>Degree <span class="box"><input name="degree" list="degree-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Degree">×</button></span></label><datalist id="degree-list"></datalist>
 <label>Programme <span class="box"><input name="programme" list="programme-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Programme">×</button></span></label><datalist id="programme-list"></datalist>
@@ -390,7 +397,7 @@ def main():
     t = today.isoformat()
     outputs = {  # build everything first, then write
         "index.html": render("Filters", [], "index.html", updated, "Loading…",
-                             FILTER_FORM.format(room=e(LAB_ROOMS[0]))),
+                             FILTER_FORM.format(room=e(LAB_ROOMS[0])), nav=DATE_NAV),
         "all.html": render("All", [l for l in lab if l["date"] >= t], "all.html", updated,
                              "No upcoming lessons."),
         "today.html": render("Today", [l for l in lab if l["date"] == t], "today.html", updated,

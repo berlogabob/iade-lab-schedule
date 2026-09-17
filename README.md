@@ -1,6 +1,6 @@
-# IADE Lab Schedule
+# IADE Schedule
 
-Static timetable and calendar feed for the IADE game lab, **Lab. e Estudo de Jogos - Tech Lab (Oriente)**.
+Static timetable for every IADE class, filterable by degree, programme, room, professor, group, course, type and date, plus a calendar feed for the game lab, **Lab. e Estudo de Jogos - Tech Lab (Oriente)**.
 
 - Site: https://berlogabob.github.io/iade-lab-schedule/
 - Calendar (.ics): https://berlogabob.github.io/iade-lab-schedule/calendar/lab.ics

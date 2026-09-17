@@ -3,17 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Filters · IADE Lab Schedule</title>
+<title>Filters · IADE Schedule</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-<h1>IADE Lab Schedule</h1>
-<p class="rooms">Lab. e Estudo de Jogos - Tech Lab (Oriente)</p>
-<nav><strong>Filters</strong> | <a href="today.html">Today</a> | <a href="week.html">This week</a> | <a href="all.html">All</a></nav>
+<h1><a href="./">IADE Schedule</a></h1>
+<nav><button type="button" data-range="today">Today</button><button type="button" data-range="week">This week</button><button type="button" data-range="all">All dates</button></nav>
 </header>
-<div id="favs"><span id="fav-list"></span><button type="button" id="fav-save">☆ Save as favourite</button></div>
-<details id="filters-box" open><summary>Filters</summary>
+<details id="filters-box" open>
+<summary><span id="summary-text">Filters</span><span id="favs"><span id="fav-list"></span><button type="button" id="fav-save">☆ Save as favourite</button></span></summary>
 <form id="filters" data-default-room="Lab. e Estudo de Jogos - Tech Lab (Oriente)">
 <label>Degree <span class="box"><input name="degree" list="degree-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Degree">×</button></span></label><datalist id="degree-list"></datalist>
 <label>Programme <span class="box"><input name="programme" list="programme-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Programme">×</button></span></label><datalist id="programme-list"></datalist>
@@ -33,7 +32,7 @@
 </main>
 <footer>
 <p>Data last changed: 2026-09-17 18:22</p>
-<p><a href="calendar/lab.ics">Subscribe to calendar (.ics)</a> · <a href="https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/">Official IADE timetable</a></p>
+<p>Lab pages: <a href="today.html">today</a> · <a href="week.html">this week</a> · <a href="all.html">all</a> · <a href="calendar/lab.ics">calendar (.ics)</a> · <a href="https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/">official IADE timetable</a></p>
 <p>Unofficial timetable view. Always verify critical scheduling information with the official IADE timetable.</p>
 </footer>
 </body>

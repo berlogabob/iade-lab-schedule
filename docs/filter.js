@@ -6,6 +6,7 @@ const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
   "October", "November", "December"];
 const box = document.getElementById("filters-box");
+const dateNav = document.querySelectorAll("nav [data-range]");
 const favList = document.getElementById("fav-list");
 const favSave = document.getElementById("fav-save");
 const MAX_FAVS = 5;
@@ -78,9 +79,10 @@ function apply(lessons, query) {
   show(lessons);
 }
 
-function describe(f) {
-  return Object.entries(f).filter(([, v]) => v && v !== "any")
-    .map(([k, v]) => k === "from" ? "from " + v : k === "to" ? "to " + v : v).join(" · ");
+function describe(f, dates) {
+  const parts = Object.entries(f).filter(([k, v]) => v && v !== "any" && !(dates && (k === "from" || k === "to")))
+    .map(([k, v]) => k === "from" ? "from " + v : k === "to" ? "to " + v : v);
+  return (dates ? [dates, ...parts] : parts).join(" · ");
 }
 
 function renderFavs(lessons) {
@@ -90,11 +92,11 @@ function renderFavs(lessons) {
     const go = el("button", fav.name);
     go.type = "button";
     go.title = "Show " + fav.name;
-    go.onclick = () => apply(lessons, fav.query);
+    go.onclick = ev => { ev.stopPropagation(); apply(lessons, fav.query); };
     const x = el("button", "×", "fav-x");
     x.type = "button";
     x.setAttribute("aria-label", "Remove favourite " + fav.name);
-    x.onclick = () => { favs.splice(i, 1); save("favs", favs); renderFavs(lessons); };
+    x.onclick = ev => { ev.stopPropagation(); favs.splice(i, 1); save("favs", favs); renderFavs(lessons); };
     chip.append(go, x);
     return chip;
   }));
@@ -113,6 +115,15 @@ function saveFav(lessons) {
   favs.push({ name: name.trim().slice(0, 60), query });
   save("favs", favs);
   renderFavs(lessons);
+}
+
+// Today / This week / All dates, as [from, to] for the date fields.
+function range(name) {
+  if (name === "all") return ["", ""];
+  if (name === "today") return [today, today];
+  const sunday = new Date(today + "T12:00:00Z");
+  sunday.setUTCDate(sunday.getUTCDate() + (7 - (sunday.getUTCDay() || 7)));
+  return [today, sunday.toISOString().slice(0, 10)];
 }
 
 function show(lessons) {
@@ -143,8 +154,10 @@ function show(lessons) {
   main.replaceChildren(...out);
   const params = new URLSearchParams(Object.entries(f).filter(([k, v]) => (v && v !== "any") || k === "room").map(([k, v]) => [k, v === "any" ? "" : v]));
   history.replaceState(null, "", "?" + params); // room always present, so "any room" survives a reload
-  const active = describe(f);
-  box.querySelector("summary").textContent = "Filters" + (active ? ": " + active : "");
+  const preset = ["today", "week", "all"].find(r => range(r).join() === [f.from, f.to].join());
+  const active = describe(f, preset && preset !== "all" && (preset === "today" ? "Today" : "This week"));
+  document.getElementById("summary-text").textContent = "Filters" + (active ? ": " + active : "");
+  for (const b of dateNav) b.classList.toggle("on", range(b.dataset.range).join() === [f.from, f.to].join());
   renderFavs(lessons);
 }
 
@@ -156,7 +169,11 @@ fetch("all.json").then(r => r.json()).then(lessons => {
   const params = new URLSearchParams(location.search);
   if (!params.size) params.set("room", form.dataset.defaultRoom), params.set("from", today);
   apply(lessons, params);
-  favSave.onclick = () => saveFav(lessons);
+  favSave.onclick = ev => { ev.stopPropagation(); saveFav(lessons); };
+  for (const b of dateNav) b.onclick = () => {
+    [form.from.value, form.to.value] = range(b.dataset.range);
+    show(lessons);
+  };
   box.open = load("filtersOpen", true);
   box.addEventListener("toggle", () => save("filtersOpen", box.open));
   form.addEventListener("input", () => show(lessons));
