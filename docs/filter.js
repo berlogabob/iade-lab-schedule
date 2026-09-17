@@ -14,9 +14,9 @@ function el(tag, text, cls) {
   return node;
 }
 
-function fill(list, values) {
+function fill(select, values) {
   for (const v of [...new Set(values)].filter(Boolean).sort((a, b) => a.localeCompare(b)))
-    list.append(new Option(v, v));
+    select.append(new Option(v, v));
 }
 
 function show(lessons) {
@@ -44,15 +44,15 @@ function show(lessons) {
   if (!hit.length) out.push(el("p", "No lessons match these filters.", "empty"));
   if (hit.length > MAX) out.push(el("p", `Showing the first ${MAX} of ${hit.length} lessons. Narrow the filters to see more.`, "empty"));
   main.replaceChildren(...out);
-  const params = new URLSearchParams(Object.entries(f).filter(([, v]) => v));
-  history.replaceState(null, "", params.size ? "?" + params : location.pathname);
+  const params = new URLSearchParams(Object.entries(f).filter(([k, v]) => v || k === "room"));
+  history.replaceState(null, "", "?" + params); // room always present, so "any room" survives a reload
 }
 
 fetch("all.json").then(r => r.json()).then(lessons => {
-  fill(document.getElementById("room-list"), lessons.flatMap(l => l.rooms));
-  fill(document.getElementById("teacher-list"), lessons.flatMap(l => l.teachers));
-  fill(document.getElementById("group-list"), lessons.flatMap(l => l.groups));
-  fill(document.getElementById("course-list"), lessons.map(l => l.course));
+  fill(form.elements.room, lessons.flatMap(l => l.rooms));
+  fill(form.elements.teacher, lessons.flatMap(l => l.teachers));
+  fill(form.elements.group, lessons.flatMap(l => l.groups));
+  fill(form.elements.course, lessons.map(l => l.course));
   fill(form.elements.type, lessons.map(l => l.type));
   const params = new URLSearchParams(location.search);
   if (!params.size) params.set("room", form.dataset.defaultRoom), params.set("from", today);
