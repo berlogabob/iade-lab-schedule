@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filter · IADE Lab Schedule</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>IADE Lab Schedule</h1>
+<p class="rooms">Lab. e Estudo de Jogos - Tech Lab (Oriente)</p>
+<nav><a href="today.html">Today</a> | <a href="week.html">This week</a> | <a href="index.html">All</a> | <strong>Filter</strong></nav>
+</header>
+<form id="filters" data-default-room="Lab. e Estudo de Jogos - Tech Lab (Oriente)">
+<label>Room / lab <input name="room" list="room-list" placeholder="any"></label><datalist id="room-list"></datalist>
+<label>Professor <input name="teacher" list="teacher-list" placeholder="any"></label><datalist id="teacher-list"></datalist>
+<label>Group <input name="group" list="group-list" placeholder="any"></label><datalist id="group-list"></datalist>
+<label>Course <input name="course" list="course-list" placeholder="any"></label><datalist id="course-list"></datalist>
+<label>Type <select name="type"><option value="">any</option></select></label>
+<label>From <input name="from" type="date"></label>
+<label>To <input name="to" type="date"></label>
+</form>
+<noscript><p class="empty">The filter page needs JavaScript. Use Today, This week or All instead.</p></noscript>
+<script src="filter.js" defer></script>
+<main>
+<p class="empty">Loading…</p>
+</main>
+<footer>
+<p>Data last changed: 2026-09-17 17:08</p>
+<p><a href="calendar/lab.ics">Subscribe to calendar (.ics)</a> · <a href="https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/">Official IADE timetable</a></p>
+<p>Unofficial timetable view. Always verify critical scheduling information with the official IADE timetable.</p>
+</footer>
+</body>
+</html>

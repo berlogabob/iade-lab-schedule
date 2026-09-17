@@ -170,14 +170,26 @@ def lab_lessons(all_lessons):
     return sorted(seen.values(), key=lambda l: (l["date"], l["start"], l["room"]))
 
 
+def all_lessons_unique(all_lessons):
+    """Every lesson once (for the filter page); a lesson in several rooms stays one entry."""
+    seen = {}
+    for l in all_lessons:
+        k = (l["date"], l["start"], l["end"], l["course"], tuple(l["rooms"]))
+        if k in seen:
+            seen[k]["groups"] = sorted(set(seen[k]["groups"]) | set(l["groups"]))
+        else:
+            seen[k] = {k2: v for k2, v in l.items() if k2 != "source_url"}
+    return sorted(seen.values(), key=lambda l: (l["date"], l["start"], l["course"]))
+
+
 def e(s):
     return html.escape(s, quote=True)
 
 
-def render(title, lessons, active, updated, empty_msg):
+def render(title, lessons, active, updated, empty_msg, before_main=""):
     nav = " | ".join(
         f'<strong>{label}</strong>' if href == active else f'<a href="{href}">{label}</a>'
-        for href, label in [("today.html", "Today"), ("week.html", "This week"), ("index.html", "All")])
+        for href, label in [("today.html", "Today"), ("week.html", "This week"), ("index.html", "All"), ("filter.html", "Filter")])
     body, current = [], None
     for l in lessons:
         if l["date"] != current:
@@ -210,7 +222,7 @@ def render(title, lessons, active, updated, empty_msg):
 <p class="rooms">{e(", ".join(LAB_ROOMS))}</p>
 <nav>{nav}</nav>
 </header>
-<main>
+{before_main}<main>
 {chr(10).join(body)}
 </main>
 <footer>
@@ -276,6 +288,20 @@ def render_ics(lessons, stamp):
     return "\r\n".join(fold(x) for x in lines) + "\r\n"
 
 
+FILTER_FORM = """<form id="filters" data-default-room="{room}">
+<label>Room / lab <input name="room" list="room-list" placeholder="any"></label><datalist id="room-list"></datalist>
+<label>Professor <input name="teacher" list="teacher-list" placeholder="any"></label><datalist id="teacher-list"></datalist>
+<label>Group <input name="group" list="group-list" placeholder="any"></label><datalist id="group-list"></datalist>
+<label>Course <input name="course" list="course-list" placeholder="any"></label><datalist id="course-list"></datalist>
+<label>Type <select name="type"><option value="">any</option></select></label>
+<label>From <input name="from" type="date"></label>
+<label>To <input name="to" type="date"></label>
+</form>
+<noscript><p class="empty">The filter page needs JavaScript. Use Today, This week or All instead.</p></noscript>
+<script src="filter.js" defer></script>
+"""
+
+
 def main():
     now = datetime.now(TZ)
     today = now.date()
@@ -308,13 +334,17 @@ def main():
     (ROOT / "rooms.txt").write_text("\n".join(rooms) + "\n", encoding="utf-8")
 
     lab = lab_lessons(all_lessons)
+    everything = all_lessons_unique(all_lessons)
+    all_json = "[\n" + ",\n".join(json.dumps(l, ensure_ascii=False, separators=(",", ":"))
+                                   for l in everything) + "\n]\n"
+    all_sha = hashlib.sha1(all_json.encode()).hexdigest()
     print(f"Lab lessons: {len(lab)}")
     if not lab:
         sys.exit(f"No lessons found for LAB_ROOMS={LAB_ROOMS}. Check rooms.txt.")
 
     data_file = DOCS / "lessons.json"
     old = json.loads(data_file.read_text(encoding="utf-8")) if data_file.exists() else {}
-    if old.get("lessons") == lab:
+    if old.get("lessons") == lab and old.get("all_sha") == all_sha:
         updated, stamp = old["updated"], old["stamp"]
     else:
         updated = now.strftime("%Y-%m-%d %H:%M")
@@ -329,8 +359,11 @@ def main():
                              "No lessons in the lab today."),
         "week.html": render("This week", [l for l in lab if t <= l["date"] <= week_end], "week.html",
                             updated, "No more lessons in the lab this week."),
+        "filter.html": render("Filter", [], "filter.html", updated, "Loading…",
+                              FILTER_FORM.format(room=e(LAB_ROOMS[0]))),
+        "all.json": all_json,
         "calendar/lab.ics": render_ics(lab, stamp),
-        "lessons.json": json.dumps({"updated": updated, "stamp": stamp, "lessons": lab},
+        "lessons.json": json.dumps({"updated": updated, "stamp": stamp, "all_sha": all_sha, "lessons": lab},
                                    ensure_ascii=False, indent=1) + "\n",
     }
     for name, content in outputs.items():

@@ -27,3 +27,8 @@ footer p { margin: .2rem 0; }
 article .room { display: none; }
 article p:not(.time, .course, .room) { display: inline; }
 article p:not(.time, .course, .room) + p:not(.room)::before { content: " · "; }
+/* filter page */
+#filters { display: flex; flex-wrap: wrap; gap: .5rem 1rem; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+#filters label { display: flex; flex-direction: column; font-size: .75rem; color: var(--muted); }
+#filters input, #filters select { min-width: 12rem; font: inherit; font-size: .9rem; padding: .25rem .4rem; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+#filters input[type=date] { min-width: 0; }

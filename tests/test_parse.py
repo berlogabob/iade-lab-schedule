@@ -41,6 +41,13 @@ lab = fetch.lab_lessons([base | {"groups": ["G1"], "rooms": [room, "Sala 1"]},
                          base | {"groups": ["G3"], "rooms": ["Sala 1"]}])
 assert len(lab) == 1 and lab[0]["groups"] == ["G1", "G2"] and lab[0]["room"] == room
 
+# all-lessons list merges groups per (lesson, rooms) and drops source_url
+every = fetch.all_lessons_unique([base | {"groups": ["G1"], "rooms": [room, "Sala 1"]},
+                                  base | {"groups": ["G2"], "rooms": [room, "Sala 1"]},
+                                  base | {"groups": ["G3"], "rooms": ["Sala 1"]}])
+assert len(every) == 2 and all("source_url" not in l for l in every)
+assert {tuple(l["groups"]) for l in every} == {("G1", "G2"), ("G3",)}
+
 # ICS: escaping, folding, CRLF, TZID
 ics = fetch.render_ics([lab[0] | {"course": "A, B; C " + "é" * 60}], "20260101T000000Z")
 assert "SUMMARY:A\\, B\\; C" in ics and "DTSTART;TZID=Europe/Lisbon:20261001T090000" in ics
