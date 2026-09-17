@@ -54,6 +54,10 @@ function openList(input) {
   input.addEventListener("focus", () => { old = input.value; typed = false; input.placeholder = old || "any"; input.value = ""; });
   input.addEventListener("input", () => { typed = true; });
   input.addEventListener("blur", () => { if (!typed) input.value = old; input.placeholder = "any"; });
+  input.nextElementSibling.addEventListener("click", () => { // the × button: back to "any"
+    old = input.value = "";
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+  });
 }
 
 function show(lessons) {

@@ -306,13 +306,13 @@ def render_ics(lessons, stamp):
 
 
 FILTER_FORM = """<form id="filters" data-default-room="{room}">
-<label>Degree <input name="degree" type="search" list="degree-list" placeholder="any" autocomplete="off"></label><datalist id="degree-list"></datalist>
-<label>Programme <input name="programme" type="search" list="programme-list" placeholder="any" autocomplete="off"></label><datalist id="programme-list"></datalist>
-<label>Room / lab <input name="room" type="search" list="room-list" placeholder="any" autocomplete="off"></label><datalist id="room-list"></datalist>
-<label>Professor <input name="teacher" type="search" list="teacher-list" placeholder="any" autocomplete="off"></label><datalist id="teacher-list"></datalist>
-<label>Group <input name="group" type="search" list="group-list" placeholder="any" autocomplete="off"></label><datalist id="group-list"></datalist>
-<label>Course <input name="course" type="search" list="course-list" placeholder="any" autocomplete="off"></label><datalist id="course-list"></datalist>
-<label>Type <input name="type" type="search" list="type-list" placeholder="any" autocomplete="off"></label><datalist id="type-list"></datalist>
+<label>Degree <span class="box"><input name="degree" list="degree-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Degree">×</button></span></label><datalist id="degree-list"></datalist>
+<label>Programme <span class="box"><input name="programme" list="programme-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Programme">×</button></span></label><datalist id="programme-list"></datalist>
+<label>Room / lab <span class="box"><input name="room" list="room-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Room / lab">×</button></span></label><datalist id="room-list"></datalist>
+<label>Professor <span class="box"><input name="teacher" list="teacher-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Professor">×</button></span></label><datalist id="teacher-list"></datalist>
+<label>Group <span class="box"><input name="group" list="group-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Group">×</button></span></label><datalist id="group-list"></datalist>
+<label>Course <span class="box"><input name="course" list="course-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Course">×</button></span></label><datalist id="course-list"></datalist>
+<label>Type <span class="box"><input name="type" list="type-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Type">×</button></span></label><datalist id="type-list"></datalist>
 <label>From <input name="from" type="date"></label>
 <label>To <input name="to" type="date"></label>
 </form>
