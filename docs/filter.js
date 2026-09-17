@@ -5,6 +5,10 @@ const MAX = 300; // ponytail: render cap, add paging if people need to scroll pa
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
   "October", "November", "December"];
+const box = document.getElementById("filters-box");
+const favList = document.getElementById("fav-list");
+const favSave = document.getElementById("fav-save");
+const MAX_FAVS = 5;
 const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Lisbon" }).format(new Date());
 
 function el(tag, text, cls) {
@@ -60,6 +64,57 @@ function openList(input) {
   });
 }
 
+// Per-browser conveniences; the page works the same if storage is blocked.
+function load(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
+}
+function save(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
+}
+
+function apply(lessons, query) {
+  const params = new URLSearchParams(query);
+  for (const input of form.elements) input.value = params.get(input.name) ?? "";
+  show(lessons);
+}
+
+function describe(f) {
+  return Object.entries(f).filter(([, v]) => v && v !== "any")
+    .map(([k, v]) => k === "from" ? "from " + v : k === "to" ? "to " + v : v).join(" · ");
+}
+
+function renderFavs(lessons) {
+  const favs = load("favs", []);
+  favList.replaceChildren(...favs.map((fav, i) => {
+    const chip = el("span", "", "fav" + ("?" + fav.query === location.search ? " on" : ""));
+    const go = el("button", fav.name);
+    go.type = "button";
+    go.title = "Show " + fav.name;
+    go.onclick = () => apply(lessons, fav.query);
+    const x = el("button", "×", "fav-x");
+    x.type = "button";
+    x.setAttribute("aria-label", "Remove favourite " + fav.name);
+    x.onclick = () => { favs.splice(i, 1); save("favs", favs); renderFavs(lessons); };
+    chip.append(go, x);
+    return chip;
+  }));
+  favSave.disabled = favs.length >= MAX_FAVS;
+  favSave.title = favSave.disabled ? `Up to ${MAX_FAVS} favourites. Remove one first.` : "Save the current filters";
+}
+
+function saveFav(lessons) {
+  const favs = load("favs", []);
+  const params = new URLSearchParams(location.search);
+  if (params.get("from") === today) params.delete("from"); // "from today" should stay today, not freeze the date
+  const query = params.toString();
+  if (favs.length >= MAX_FAVS || favs.some(fav => fav.query === query)) return;
+  const name = prompt("Name this favourite", describe(Object.fromEntries(params)) || "Everything");
+  if (!name) return;
+  favs.push({ name: name.trim().slice(0, 60), query });
+  save("favs", favs);
+  renderFavs(lessons);
+}
+
 function show(lessons) {
   const f = Object.fromEntries(new FormData(form));
   // pass[i][j]: lesson i passes field j (the date range counts as one more field)
@@ -88,6 +143,9 @@ function show(lessons) {
   main.replaceChildren(...out);
   const params = new URLSearchParams(Object.entries(f).filter(([k, v]) => (v && v !== "any") || k === "room").map(([k, v]) => [k, v === "any" ? "" : v]));
   history.replaceState(null, "", "?" + params); // room always present, so "any room" survives a reload
+  const active = describe(f);
+  box.querySelector("summary").textContent = "Filters" + (active ? ": " + active : "");
+  renderFavs(lessons);
 }
 
 fetch("all.json").then(r => r.json()).then(lessons => {
@@ -97,8 +155,10 @@ fetch("all.json").then(r => r.json()).then(lessons => {
   }
   const params = new URLSearchParams(location.search);
   if (!params.size) params.set("room", form.dataset.defaultRoom), params.set("from", today);
-  for (const [k, v] of params) if (form.elements[k]) form.elements[k].value = v;
-  show(lessons);
+  apply(lessons, params);
+  favSave.onclick = () => saveFav(lessons);
+  box.open = load("filtersOpen", true);
+  box.addEventListener("toggle", () => save("filtersOpen", box.open));
   form.addEventListener("input", () => show(lessons));
   form.addEventListener("submit", ev => ev.preventDefault());
 }).catch(() => main.replaceChildren(el("p", "Could not load the timetable data.", "empty")));

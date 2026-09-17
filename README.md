@@ -13,8 +13,8 @@ Static timetable and calendar feed for the IADE game lab, **Lab. e Estudo de Jog
 
 `scripts/fetch.py` reads the official index page and downloads every class timetable page from the current week onward. It parses the weekly grids, keeps lessons held in the rooms listed in `LAB_ROOMS`, and writes:
 
-- `docs/index.html`, `docs/today.html` and `docs/week.html`, which are plain HTML and CSS with no JavaScript
-- `docs/filter.html`, which filters every IADE lesson (`docs/all.json`) by degree (Bachelor, Master, PhD), programme, room or lab, professor, group, course, type and dates. Programmes come from the headings in the official index page. It is the only page that uses JavaScript (`docs/filter.js`), and it keeps the chosen filters in the URL, so a view like `filter.html?teacher=José+Graça` can be bookmarked or left open on a TV
+- `docs/today.html`, `docs/week.html` and `docs/all.html`, which show the lab only and are plain HTML and CSS with no JavaScript
+- `docs/index.html`, the main page, which filters every IADE lesson (`docs/all.json`) by degree (Bachelor, Master, PhD), programme, room or lab, professor, group, course, type and dates. Programmes come from the headings in the official index page. It is the only page that uses JavaScript (`docs/filter.js`), and it keeps the chosen filters in the URL, so a view like `?teacher=José+Graça` can be bookmarked or left open on a TV. Up to 5 filter sets can be saved as favourites (stored in the browser), and the filter block can be collapsed. `filter.html` redirects there for old links
 - `docs/calendar/lab.ics`
 - `docs/lessons.json`, which holds the data and is used to detect changes
 - `rooms.txt`, which lists every room name on the source site
@@ -27,16 +27,16 @@ GitHub Actions runs it every 6 hours and commits only when output changes. If th
 uv sync
 uv run python tests/test_parse.py
 uv run python scripts/fetch.py
-open docs/index.html
+open docs/today.html
 ```
 
-The filter page loads `all.json` with `fetch()`, which browsers block for `file://` pages. Serve the folder to test it:
+The main page loads `all.json` with `fetch()`, which browsers block for `file://` pages. Serve the folder to test it:
 
 ```bash
 uv run python -m http.server -d docs
 ```
 
-Then open http://localhost:8000/filter.html.
+Then open http://localhost:8000/.
 
 It uses only the Python standard library.
 

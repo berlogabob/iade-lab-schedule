@@ -206,7 +206,7 @@ def e(s):
 def render(title, lessons, active, updated, empty_msg, before_main=""):
     nav = " | ".join(
         f'<strong>{label}</strong>' if href == active else f'<a href="{href}">{label}</a>'
-        for href, label in [("today.html", "Today"), ("week.html", "This week"), ("index.html", "All"), ("filter.html", "Filter")])
+        for href, label in [("index.html", "Filters"), ("today.html", "Today"), ("week.html", "This week"), ("all.html", "All")])
     body, current = [], None
     for l in lessons:
         if l["date"] != current:
@@ -305,7 +305,9 @@ def render_ics(lessons, stamp):
     return "\r\n".join(fold(x) for x in lines) + "\r\n"
 
 
-FILTER_FORM = """<form id="filters" data-default-room="{room}">
+FILTER_FORM = """<div id="favs"><span id="fav-list"></span><button type="button" id="fav-save">☆ Save as favourite</button></div>
+<details id="filters-box" open><summary>Filters</summary>
+<form id="filters" data-default-room="{room}">
 <label>Degree <span class="box"><input name="degree" list="degree-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Degree">×</button></span></label><datalist id="degree-list"></datalist>
 <label>Programme <span class="box"><input name="programme" list="programme-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Programme">×</button></span></label><datalist id="programme-list"></datalist>
 <label>Room / lab <span class="box"><input name="room" list="room-list" placeholder="any" autocomplete="off"><button type="button" class="clear" aria-label="Clear Room / lab">×</button></span></label><datalist id="room-list"></datalist>
@@ -316,8 +318,17 @@ FILTER_FORM = """<form id="filters" data-default-room="{room}">
 <label>From <input name="from" type="date"></label>
 <label>To <input name="to" type="date"></label>
 </form>
-<noscript><p class="empty">The filter page needs JavaScript. Use Today, This week or All instead.</p></noscript>
+</details>
+<noscript><p class="empty">Filters need JavaScript. Use Today, This week or All instead.</p></noscript>
 <script src="filter.js" defer></script>
+"""
+
+# old address of the filter page; keeps bookmarked filter links working
+FILTER_REDIRECT = """<!doctype html>
+<meta charset="utf-8">
+<title>Moved</title>
+<script>location.replace("./" + location.search)</script>
+<p><a href="./">The filter page moved to the main page.</a></p>
 """
 
 
@@ -378,14 +389,15 @@ def main():
     week_end = (today + timedelta(days=6 - today.weekday())).isoformat()
     t = today.isoformat()
     outputs = {  # build everything first, then write
-        "index.html": render("All", [l for l in lab if l["date"] >= t], "index.html", updated,
+        "index.html": render("Filters", [], "index.html", updated, "Loading…",
+                             FILTER_FORM.format(room=e(LAB_ROOMS[0]))),
+        "all.html": render("All", [l for l in lab if l["date"] >= t], "all.html", updated,
                              "No upcoming lessons."),
         "today.html": render("Today", [l for l in lab if l["date"] == t], "today.html", updated,
                              "No lessons in the lab today."),
         "week.html": render("This week", [l for l in lab if t <= l["date"] <= week_end], "week.html",
                             updated, "No more lessons in the lab this week."),
-        "filter.html": render("Filter", [], "filter.html", updated, "Loading…",
-                              FILTER_FORM.format(room=e(LAB_ROOMS[0]))),
+        "filter.html": FILTER_REDIRECT,
         "all.json": all_json,
         "calendar/lab.ics": render_ics(lab, stamp),
         "lessons.json": json.dumps({"updated": updated, "stamp": stamp, "all_sha": all_sha, "lessons": lab},
