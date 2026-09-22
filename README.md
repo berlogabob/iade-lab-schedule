@@ -39,11 +39,32 @@ uv run python -m http.server -d docs
 
 Then open http://localhost:8000/.
 
-It uses only the Python standard library.
+It uses the Python standard library plus `recurring-ical-events` (and `icalendar`) for the bookings calendar.
 
 ## Change the lab
 
 Pick exact names from `rooms.txt` and put them in `LAB_ROOMS` at the top of `scripts/fetch.py`.
+
+## Bookings
+
+Confirmed lab bookings (student consultations, club meetings, extra classes, events) come from a separate Google Calendar and appear everywhere lessons do: the main page, the lab pages and `lab.ics`.
+
+Setup, once:
+
+1. In Google Calendar, create a new calendar called "IADE Lab Bookings". Don't use your main calendar.
+2. In its settings, turn on "Make available to public".
+3. Copy the **Public address in iCal format** into `BOOKINGS_ICS` at the top of `scripts/fetch.py`. Never use the secret address, because this repository is public.
+
+Everything on that calendar is public, so keep personal details out of event titles.
+
+To add a booking, create an event on that calendar:
+
+- **Title**: what shows as the course, for example "Project consultation".
+- **Location**: exact room names from `rooms.txt`, separated by `;`. Leave it empty for the lab.
+- **Description**: optional lines `Type: Club`, `Group: TechLab`, `Teacher: Prof. Silva`. The type defaults to `Booking`.
+- Repeating events work. All-day events are ignored.
+
+The site picks up bookings on its next run, which happens every 6 hours. To publish sooner, open Actions → Update schedule → Run workflow. If the calendar can't be read, the run fails and the site keeps its last version.
 
 ## Subscribe
 

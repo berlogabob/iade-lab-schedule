@@ -67,4 +67,16 @@ ics = fetch.render_ics([lab[0] | {"course": "A, B; C " + "é" * 60}], "20260101T
 assert "SUMMARY:A\\, B\\; C" in ics and "DTSTART;TZID=Europe/Lisbon:20261001T090000" in ics
 assert all(len(x.encode()) <= 75 for x in ics.split("\r\n")), "line not folded"
 assert "\n" not in ics.replace("\r\n", "")
+
+# bookings calendar: weekly repeat with one skipped date, description fields, UTC -> Lisbon
+feed = """BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nUID:a\r\nSUMMARY:Club meeting\r
+DTSTART:20261006T160000Z\r\nDTEND:20261006T180000Z\r\nRRULE:FREQ=WEEKLY;COUNT=3\r
+EXDATE:20261013T160000Z\r\nDESCRIPTION:Type: Club<br>Group: TechLab\r\nEND:VEVENT\r
+BEGIN:VEVENT\r\nUID:b\r\nSUMMARY:Consultation\r\nLOCATION:Sala 1; Sala 2\r
+DTSTART:20261007T100000Z\r\nDTEND:20261007T110000Z\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n"""
+bk = sorted(fetch.bookings(feed, datetime(2026, 10, 1).date()), key=lambda l: l["date"])
+assert [l["date"] for l in bk] == ["2026-10-06", "2026-10-07", "2026-10-20"], bk
+assert bk[0]["start"] == "17:00" and bk[0]["type"] == "Club" and bk[0]["groups"] == ["TechLab"]
+assert bk[0]["rooms"] == fetch.LAB_ROOMS[:1] and bk[1]["rooms"] == ["Sala 1", "Sala 2"]
+assert bk[1]["type"] == "Booking" and bk[1]["teachers"] == []
 print("ok")
