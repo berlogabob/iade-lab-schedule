@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-22 17:56",
- "stamp": "20260922T165837Z",
- "all_sha": "c5bcdbeb4110fbe0d388e296c6a5b4bfebde4e10",
+ "updated": "2026-09-22 19:30",
+ "stamp": "20260922T183131Z",
+ "all_sha": "c212405ba44d2fa7d1199a0440aae517a211ee82",
  "lessons": [
   {
    "start": "08:30",
@@ -32,6 +32,18 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026090720260928.html",
    "date": "2026-09-22",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "19:30",
+   "end": "20:30",
+   "course": "GO HOME!",
+   "groups": [],
+   "teachers": [],
+   "type": "Booking",
+   "date": "2026-09-22",
+   "source_url": "",
+   "source": "booking",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
