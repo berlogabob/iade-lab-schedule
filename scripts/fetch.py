@@ -251,8 +251,9 @@ def render(title, lessons, active, updated, empty_msg, before_main="", nav=""):
             d = date.fromisoformat(current)
             body.append(f'<section><h2>{DAYS[d.weekday()]}, {d.day} {d.strftime("%B")} {d.year}</h2>')
         meta = [", ".join(l["teachers"]), ", ".join(l["groups"]), l["type"]]
+        cls = ' class="booking"' if l.get("source") == "booking" else ""
         body.append(
-            f'<article><p class="time">{l["start"]}–{l["end"]}</p>'
+            f'<article{cls}><p class="time">{l["start"]}–{l["end"]}</p>'
             f'<p class="course">{e(l["course"])}</p>'
             + "".join(f"<p>{e(m)}</p>" for m in meta if m)
             + f'<p class="room">{e(l["room"])}</p></article>')

@@ -146,6 +146,8 @@ const dayName = date => {
   return `${DAYS[d.getUTCDay()]}, ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 };
 
+const bk = l => l.source === "booking" ? " booking" : "";
+
 const details = l => [l.course, l.rooms.join(", "), l.teachers.join(", "), l.groups.join(", "), l.type]
   .filter(Boolean).join(" · ");
 
@@ -159,7 +161,7 @@ function renderList(hit) {
       section.append(el("h2", dayName(l.date)));
       out.push(section);
     }
-    const a = el("article");
+    const a = el("article", "", bk(l).trim());
     a.append(el("p", `${l.start}–${l.end}`, "time"), el("p", l.course, "course"));
     for (const m of [l.rooms.join(", "), l.teachers.join(", "), l.groups.join(", "), l.type])
       if (m) a.append(el("p", m));
@@ -199,7 +201,7 @@ function renderGrid(hit, dates) {
   for (const date of dates) {
     const col = el("div", "", "cal-col" + (date === today ? " on" : ""));
     for (const { lesson, top, height, left, width } of layout(hit.filter(l => l.date === date), first, last)) {
-      const ev = el("div", "", "ev");
+      const ev = el("div", "", "ev" + bk(lesson));
       ev.style.cssText = `top:${top}%;height:${height}%;left:${left}%;width:${width}%`;
       ev.title = details(lesson);
       ev.append(el("span", `${lesson.start}–${lesson.end}`, "ev-time"), el("span", lesson.course, "ev-course"),
@@ -225,7 +227,7 @@ function renderMonth(hit, lessons) {
     cell.append(el("div", String(Number(date.slice(8))), "month-num"));
     const day = (byDate.get(date) ?? []).sort((a, b) => a.start.localeCompare(b.start));
     for (const l of day.slice(0, 3)) {
-      const line = el("div", "", "month-ev");
+      const line = el("div", "", "month-ev" + bk(l));
       line.title = details(l);
       line.append(el("span", l.start, "ev-time"), el("span", l.course, "ev-course"));
       cell.append(line);

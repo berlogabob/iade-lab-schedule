@@ -1,5 +1,5 @@
-:root { color-scheme: light dark; --fg: #1a1a1a; --muted: #666; --bg: #fafaf7; --card: #fff; --line: #e3e1da; --accent: #b3261e; }
-@media (prefers-color-scheme: dark) { :root { --fg: #eee; --muted: #aaa; --bg: #161616; --card: #202020; --line: #333; --accent: #ff8a80; } }
+:root { color-scheme: light dark; --fg: #1a1a1a; --muted: #666; --bg: #fafaf7; --card: #fff; --line: #e3e1da; --accent: #b3261e; --booking: #1e5cb3; }
+@media (prefers-color-scheme: dark) { :root { --fg: #eee; --muted: #aaa; --bg: #161616; --card: #202020; --line: #333; --accent: #ff8a80; --booking: #82b1ff; } }
 * { box-sizing: border-box; }
 /* 16:9 screens: full width, type scales with viewport width, days laid out as columns */
 html { font-size: clamp(16px, 1.15vw, 44px); }
@@ -70,6 +70,10 @@ article p:not(.time, .course, .room) + p:not(.room)::before { content: " · "; }
 .cal-col { position: relative; border-left: 1px solid var(--line); background: repeating-linear-gradient(var(--line) 0 1px, transparent 1px calc(var(--hour, 3rem))); }
 .cal-col.on { background-color: color-mix(in srgb, var(--accent) 5%, transparent); }
 .ev { position: absolute; overflow: hidden; display: flex; flex-direction: column; padding: .15rem .3rem; font-size: .75rem; line-height: 1.15; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 5px; }
+/* bookings (Google Calendar layer): blue, the palette twin of the red accent */
+article.booking { border-left: 3px solid var(--booking); }
+.ev.booking { border-left-color: var(--booking); background: color-mix(in srgb, var(--booking) 8%, var(--card)); }
+.month-ev.booking .ev-time { color: var(--booking); }
 .ev-time { font-weight: 600; font-variant-numeric: tabular-nums; }
 .ev-course { overflow: hidden; }
 .ev-meta { color: var(--muted); overflow: hidden; }
