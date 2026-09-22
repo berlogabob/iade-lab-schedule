@@ -24,7 +24,8 @@ LAB_ROOMS = [
     "Lab. e Estudo de Jogos - Tech Lab (Oriente)",
 ]
 # Public iCal address of the "IADE Lab Bookings" Google Calendar (never the secret one). Empty = no bookings.
-BOOKINGS_ICS = ""
+BOOKINGS_ICS = ("https://calendar.google.com/calendar/ical/5246c5e28f96a3690680ae29fa4528f59b9adb134b0907b66199854db16f4449"
+                "%40group.calendar.google.com/public/basic.ics")
 BOOKINGS_DAYS = 180  # how far ahead repeating bookings are expanded
 SITE_TITLE = "IADE Schedule"
 CAL_TITLE = "IADE Lab Schedule"  # the .ics still covers the lab only
