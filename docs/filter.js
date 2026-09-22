@@ -267,7 +267,7 @@ function show(lessons) {
   renderFavs(lessons);
 }
 
-fetch("all.json").then(r => r.json()).then(lessons => {
+fetch("all.json", { cache: "no-cache" }).then(r => r.json()).then(lessons => {
   for (const name in FIELDS) {
     options[name] = new Set(lessons.flatMap(FIELDS[name]).filter(Boolean));
     openList(form.elements[name]);

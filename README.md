@@ -47,7 +47,7 @@ Pick exact names from `rooms.txt` and put them in `LAB_ROOMS` at the top of `scr
 
 ## Bookings
 
-Confirmed lab bookings (student consultations, club meetings, extra classes, events) come from a separate Google Calendar and appear everywhere lessons do: the main page, the lab pages and `lab.ics`.
+Confirmed lab bookings (student consultations, club meetings, extra classes, events) come from a separate Google Calendar and appear everywhere lessons do: the main page, the lab pages and `lab.ics`. On the site they're shown in blue (`--booking` in `docs/style.css`), which pairs with the red accent, so they stand apart from the official timetable.
 
 Setup, once:
 
@@ -65,6 +65,8 @@ To add a booking, create an event on that calendar:
 - Repeating events work. All-day events are ignored.
 
 The site picks up bookings on its next run, which happens every 6 hours. To publish sooner, open Actions → Update schedule → Run workflow. If the calendar can't be read, the run fails and the site keeps its last version.
+
+The main page checks for a new `all.json` on every load (`cache: "no-cache"`), so new bookings appear as soon as GitHub Pages has deployed, usually within a minute or two of the run. The Today, This week and All pages are plain HTML that browsers may keep for up to 10 minutes. Refresh them if a booking is missing.
 
 ## Subscribe
 
