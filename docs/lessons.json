@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-22 19:30",
- "stamp": "20260922T183131Z",
- "all_sha": "c212405ba44d2fa7d1199a0440aae517a211ee82",
+ "updated": "2026-09-22 19:37",
+ "stamp": "20260922T183928Z",
+ "all_sha": "2b75ee0009a556a0fc3ade4781dfee026c0b1424",
  "lessons": [
   {
    "start": "08:30",
@@ -36,7 +36,7 @@
   },
   {
    "start": "19:30",
-   "end": "20:30",
+   "end": "22:30",
    "course": "GO HOME!",
    "groups": [],
    "teachers": [],
