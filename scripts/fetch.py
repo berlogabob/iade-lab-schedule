@@ -15,11 +15,17 @@ from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import icalendar
+import recurring_ical_events
+
 BASE = "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/"
 # Exact room names as they appear on the source site (see rooms.txt).
 LAB_ROOMS = [
     "Lab. e Estudo de Jogos - Tech Lab (Oriente)",
 ]
+# Public iCal address of the "IADE Lab Bookings" Google Calendar (never the secret one). Empty = no bookings.
+BOOKINGS_ICS = ""
+BOOKINGS_DAYS = 180  # how far ahead repeating bookings are expanded
 SITE_TITLE = "IADE Schedule"
 CAL_TITLE = "IADE Lab Schedule"  # the .ics still covers the lab only
 TZ = ZoneInfo("Europe/Lisbon")
@@ -166,6 +172,30 @@ def parse_page(page_html, source_url=""):
                         pending["_col"] = col
             col += colspan
     return lessons
+
+
+def bookings(ics, today):
+    """Events of the bookings calendar as lessons. Location: rooms split by ';' (empty = the lab).
+    Description lines 'Type: ...', 'Group: ...', 'Teacher: ...' fill those fields."""
+    cal = icalendar.Calendar.from_ical(ics)
+    out = []
+    for ev in recurring_ical_events.of(cal).between(today, today + timedelta(days=BOOKINGS_DAYS)):
+        start, end = ev.decoded("DTSTART"), ev.decoded("DTEND", None) or ev.decoded("DTSTART")
+        if not isinstance(start, datetime):  # ponytail: all-day events skipped, add when needed
+            continue
+        start, end = start.astimezone(TZ), end.astimezone(TZ)
+        meta = {}
+        for line in re.sub(r"<[^>]+>", "\n", str(ev.get("DESCRIPTION", ""))).splitlines():
+            k, _, v = line.partition(":")
+            if v.strip():
+                meta.setdefault(k.strip().lower(), []).append(v.strip())
+        rooms = [r.strip() for r in str(ev.get("LOCATION", "")).split(";") if r.strip()]
+        out.append({"start": start.strftime("%H:%M"), "end": end.strftime("%H:%M"),
+                    "course": str(ev.get("SUMMARY", "Booking")), "groups": meta.get("group", []),
+                    "teachers": meta.get("teacher", []), "type": (meta.get("type") or ["Booking"])[0],
+                    "rooms": rooms or LAB_ROOMS[:1], "date": start.date().isoformat(),
+                    "source_url": "", "source": "booking"})
+    return out
 
 
 # ---------- build ----------
@@ -380,6 +410,10 @@ def main():
     # sanity checks: never overwrite a working site with a broken one
     if len(all_lessons) < 10 or failed > len(pages) // 2:
         sys.exit("Too few lessons or too many failures. Source format may have changed.")
+    if BOOKINGS_ICS:  # a broken feed stops the run, so the site keeps its last good bookings
+        booked = bookings(get(BOOKINGS_ICS), today)
+        print(f"Bookings: {len(booked)}")
+        all_lessons += booked
     (ROOT / "rooms.txt").write_text("\n".join(rooms) + "\n", encoding="utf-8")
 
     lab = lab_lessons(all_lessons)
