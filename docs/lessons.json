@@ -1,53 +1,8 @@
 {
- "updated": "2026-09-23 17:57",
- "stamp": "20260923T165916Z",
- "all_sha": "e51db2d9151e4e391d15dbb48b8c84dba8fb2d30",
+ "updated": "2026-09-24 05:49",
+ "stamp": "20260924T045050Z",
+ "all_sha": "6c7e4727bc48c5fe70a777162c42cee23a20d20c",
  "lessons": [
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "José Graça"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026090720260928.html",
-   "date": "2026-09-23",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "José Graça"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026090720260928.html",
-   "date": "2026-09-23",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "16:30",
-   "end": "18:30",
-   "course": "Projeto de Jogo em Grelha/Grid-Based Game Project",
-   "groups": [
-    "LDJO001D01"
-   ],
-   "teachers": [
-    "José Graça"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO001D01_294_2026091420260928.html",
-   "date": "2026-09-23",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
   {
    "start": "08:00",
    "end": "11:00",
