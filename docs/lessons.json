@@ -1,35 +1,35 @@
 {
- "updated": "2026-09-27 06:17",
- "stamp": "20260927T051952Z",
- "all_sha": "b519ab6df0d1e9a7496d1c39572a8c6c3a2c210a",
+ "updated": "2026-09-29 00:15",
+ "stamp": "20260928T231743Z",
+ "all_sha": "1e64a56e2c2ec2af8d469b542308763e955fd695",
  "lessons": [
   {
-   "start": "09:00",
-   "end": "12:00",
-   "course": "Projeto de Jogo 2D/2D Game Design",
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "Pamela Teubig"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026090720260928.html",
-   "date": "2026-09-28",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20260928.html",
+   "date": "2026-09-29",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
    "groups": [
-    "LDJO003D01"
+    "LTCR005D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026090720260928.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20260928.html",
    "date": "2026-09-29",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -50,6 +50,21 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
+   "start": "15:00",
+   "end": "18:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20260928.html",
+   "date": "2026-09-29",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
    "start": "11:00",
    "end": "13:30",
    "course": "Projeto de Realidade Virtual/Virtual Reality Design",
@@ -60,7 +75,7 @@
     "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026090720260928.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20260928.html",
    "date": "2026-09-30",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -75,7 +90,7 @@
     "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026090720260928.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20260928.html",
    "date": "2026-09-30",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -105,7 +120,7 @@
     "Rita Malaquias"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026090720260928.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20260928.html",
    "date": "2026-10-01",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -120,7 +135,7 @@
     "José Graça"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026090720260928.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20260928.html",
    "date": "2026-10-01",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -135,7 +150,7 @@
     "José Graça"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026090720260928.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20260928.html",
    "date": "2026-10-01",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -155,36 +170,6 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026090720260928.html",
-   "date": "2026-10-02",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026090720260928.html",
-   "date": "2026-10-02",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
    "start": "14:00",
    "end": "17:00",
    "course": "Projeto de Jogo em Grelha/Grid-Based Game Project",
@@ -201,16 +186,31 @@
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_20261005.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20261005.html",
+   "date": "2026-10-06",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20261005.html",
    "date": "2026-10-06",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -336,36 +336,6 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20261005.html",
-   "date": "2026-10-09",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20261005.html",
-   "date": "2026-10-09",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
    "start": "09:00",
    "end": "12:00",
    "course": "Projeto de Jogo 2D/2D Game Design",
@@ -382,16 +352,31 @@
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026101220261019.html",
+   "date": "2026-10-13",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
    "date": "2026-10-13",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -408,6 +393,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026101220261026.html",
+   "date": "2026-10-13",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "18:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
    "date": "2026-10-13",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -514,36 +514,6 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
    "date": "2026-10-15",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026101220261019.html",
-   "date": "2026-10-16",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
-   "date": "2026-10-16",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
@@ -578,16 +548,31 @@
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026101220261019.html",
+   "date": "2026-10-20",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
    "date": "2026-10-20",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -604,6 +589,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026101220261026.html",
+   "date": "2026-10-20",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "18:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
    "date": "2026-10-20",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -713,36 +713,6 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026101220261019.html",
-   "date": "2026-10-23",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
-   "date": "2026-10-23",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
    "start": "14:00",
    "end": "17:00",
    "course": "Projeto de Jogo em Grelha/Grid-Based Game Project",
@@ -773,21 +743,6 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
-   "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
-   "groups": [
-    "LDJO003D01"
-   ],
-   "teachers": [
-    "David Mendes Ramos"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
-   "date": "2026-10-27",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
    "start": "11:30",
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
@@ -800,6 +755,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026101220261026.html",
+   "date": "2026-10-27",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "18:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20261026.html",
    "date": "2026-10-27",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -925,16 +895,31 @@
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
+   "date": "2026-11-03",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-03",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -951,6 +936,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "date": "2026-11-03",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "17:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-03",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1072,36 +1072,6 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
    "date": "2026-11-05",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
-   "date": "2026-11-06",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
-   "date": "2026-11-06",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
@@ -1136,16 +1106,31 @@
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
+   "date": "2026-11-10",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-10",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1162,6 +1147,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "date": "2026-11-10",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "17:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-10",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1283,36 +1283,6 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
    "date": "2026-11-12",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
-   "date": "2026-11-13",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
-   "date": "2026-11-13",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
@@ -1347,16 +1317,31 @@
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
+   "date": "2026-11-17",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-17",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1373,6 +1358,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "date": "2026-11-17",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "17:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-17",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1494,36 +1494,6 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
    "date": "2026-11-19",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
-   "date": "2026-11-20",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
-   "date": "2026-11-20",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
@@ -1558,16 +1528,31 @@
   },
   {
    "start": "08:30",
-   "end": "11:30",
-   "course": "Inteligência Artifical I/Artificial Intelligence I",
+   "end": "11:00",
+   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
    "groups": [
-    "LDJO003D01"
+    "LTCR003D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Eulerson Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
+   "date": "2026-11-24",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "08:30",
+   "end": "11:00",
+   "course": "Projeto V / Project V",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-24",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1584,6 +1569,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "date": "2026-11-24",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "17:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
    "date": "2026-11-24",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1705,36 +1705,6 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
    "date": "2026-11-26",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
-   "date": "2026-11-27",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
-   "date": "2026-11-27",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
@@ -1888,36 +1858,6 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026113020261207.html",
-   "date": "2026-12-04",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026113020261207.html",
-   "date": "2026-12-04",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
    "start": "14:00",
    "end": "17:00",
    "course": "Projeto de Jogo em Grelha/Grid-Based Game Project",
@@ -2065,36 +2005,6 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261207.html",
    "date": "2026-12-10",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026113020261207.html",
-   "date": "2026-12-11",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "13:30",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026113020261207.html",
-   "date": "2026-12-11",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
