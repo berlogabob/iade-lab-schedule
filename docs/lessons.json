@@ -1,7 +1,7 @@
 {
- "updated": "2026-09-30 06:31",
- "stamp": "20260930T053325Z",
- "all_sha": "eaae82f5e8ce09bb792add9aa0d44622053e8316",
+ "updated": "2026-09-30 23:15",
+ "stamp": "20260930T221702Z",
+ "all_sha": "d44b6a7bcf646ce10f5601fa1ad69779abf84ef7",
  "lessons": [
   {
    "start": "11:00",
@@ -104,7 +104,7 @@
     "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026091420260928.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20260928.html",
    "date": "2026-10-01",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1962,6 +1962,21 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
+   "start": "09:00",
+   "end": "12:00",
+   "course": "Projeto de Jogo 2D/2D Game Design",
+   "groups": [
+    "LDJO003D01"
+   ],
+   "teachers": [
+    "Pamela Teubig"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_20261214.html",
+   "date": "2026-12-14",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
    "start": "11:30",
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
@@ -1974,6 +1989,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_20261214.html",
+   "date": "2026-12-15",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "15:00",
+   "end": "17:00",
+   "course": "Design para Jogos / Game Design",
+   "groups": [
+    "LTCR005D01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20261214.html",
    "date": "2026-12-15",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
