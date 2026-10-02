@@ -1,68 +1,8 @@
 {
- "updated": "2026-10-01 23:40",
- "stamp": "20261001T224208Z",
- "all_sha": "bdc1cf3d896a733957f1b4c39d154b30828818af",
+ "updated": "2026-10-02 06:35",
+ "stamp": "20261002T053806Z",
+ "all_sha": "1d8bb161df9d615f0a5b5355c1449dd2f917cea7",
  "lessons": [
-  {
-   "start": "08:00",
-   "end": "11:00",
-   "course": "Frameworks para Jogos / Game Frameworks",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Rita Malaquias"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20260928.html",
-   "date": "2026-10-01",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "14:00",
-   "course": "Programação para Realidade Virtual/Virtual Reality Programming",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "José Graça"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_20260928.html",
-   "date": "2026-10-01",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:00",
-   "end": "14:00",
-   "course": "Desenvolvimento de Realidade Virtual / VR Development",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "José Graça"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20260928.html",
-   "date": "2026-10-01",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "14:00",
-   "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
-   "groups": [
-    "LDJO005D01"
-   ],
-   "teachers": [
-    "Bernardo Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20260928.html",
-   "date": "2026-10-01",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
   {
    "start": "14:00",
    "end": "17:00",
