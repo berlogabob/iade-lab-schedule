@@ -1,69 +1,8 @@
 {
- "updated": "2026-10-13 15:10",
- "stamp": "20261013T141142Z",
- "all_sha": "3b3f3b686cd361b01dda0141ee4b2c86886dfcba",
+ "updated": "2026-10-14 05:51",
+ "stamp": "20261014T045301Z",
+ "all_sha": "3615348b1d2d2348f277c60718e4cfaf7a6262de",
  "lessons": [
-  {
-   "start": "08:30",
-   "end": "11:00",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026101220261019.html",
-   "date": "2026-10-13",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "08:30",
-   "end": "11:00",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
-   "date": "2026-10-13",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:30",
-   "end": "13:30",
-   "course": "Projeto de Visualização de Informação",
-   "groups": [
-    "LEIIG07D01",
-    "LIGS005D01"
-   ],
-   "teachers": [
-    "Ângela Isabel Maria Xavier Barros"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026101220261019.html",
-   "date": "2026-10-13",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "15:00",
-   "end": "18:00",
-   "course": "Design para Jogos / Game Design",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026101220261019.html",
-   "date": "2026-10-13",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
   {
    "start": "11:00",
    "end": "13:30",
