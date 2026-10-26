@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-24 05:34",
- "stamp": "20261024T043555Z",
- "all_sha": "4fb3d0a95467a07815bd3d51491370da07c7707a",
+ "updated": "2026-10-26 22:39",
+ "stamp": "20261026T224059Z",
+ "all_sha": "3c459860bfca41e217bb78a052d50dd2c3c8e299",
  "lessons": [
   {
    "start": "09:00",
@@ -23,14 +23,14 @@
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
    "groups": [
-    "LEIIG07D01",
+    "LEIIGS07D01",
     "LIGS005D01"
    ],
    "teachers": [
     "Ângela Isabel Maria Xavier Barros"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_20261026.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIGS07D01_795_20261026.html",
    "date": "2026-10-27",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -61,6 +61,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_20261026.html",
+   "date": "2026-10-28",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Tecnologias Emergentes para Jogos",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "David Mendes Ramos"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-10-28",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -135,7 +150,7 @@
     "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-10-29",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -204,14 +219,14 @@
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
    "groups": [
-    "LEIIG07D01",
+    "LEIIGS07D01",
     "LIGS005D01"
    ],
    "teachers": [
     "Ângela Isabel Maria Xavier Barros"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIGS07D01_795_2026110220261123.html",
    "date": "2026-11-03",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -272,6 +287,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
+   "date": "2026-11-04",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Tecnologias Emergentes para Jogos",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "David Mendes Ramos"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-04",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -346,7 +376,7 @@
     "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-05",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -415,14 +445,14 @@
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
    "groups": [
-    "LEIIG07D01",
+    "LEIIGS07D01",
     "LIGS005D01"
    ],
    "teachers": [
     "Ângela Isabel Maria Xavier Barros"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIGS07D01_795_2026110220261123.html",
    "date": "2026-11-10",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -483,6 +513,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
+   "date": "2026-11-11",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Tecnologias Emergentes para Jogos",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "David Mendes Ramos"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-11",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -557,7 +602,7 @@
     "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-12",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -626,14 +671,14 @@
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
    "groups": [
-    "LEIIG07D01",
+    "LEIIGS07D01",
     "LIGS005D01"
    ],
    "teachers": [
     "Ângela Isabel Maria Xavier Barros"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIGS07D01_795_2026110220261123.html",
    "date": "2026-11-17",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -694,6 +739,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
+   "date": "2026-11-18",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Tecnologias Emergentes para Jogos",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "David Mendes Ramos"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-18",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -768,7 +828,7 @@
     "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-19",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -837,14 +897,14 @@
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
    "groups": [
-    "LEIIG07D01",
+    "LEIIGS07D01",
     "LIGS005D01"
    ],
    "teachers": [
     "Ângela Isabel Maria Xavier Barros"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_2026110220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIGS07D01_795_2026110220261123.html",
    "date": "2026-11-24",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -905,6 +965,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
+   "date": "2026-11-25",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Tecnologias Emergentes para Jogos",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "David Mendes Ramos"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-25",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -979,7 +1054,7 @@
     "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026101220261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
    "date": "2026-11-26",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1055,6 +1130,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026113020261207.html",
+   "date": "2026-12-02",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Tecnologias Emergentes para Jogos",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "David Mendes Ramos"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261130.html",
    "date": "2026-12-02",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1209,6 +1299,21 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Tecnologias Emergentes para Jogos",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "David Mendes Ramos"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261207.html",
+   "date": "2026-12-09",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
    "start": "16:30",
    "end": "18:30",
    "course": "Projeto de Jogo em Grelha/Grid-Based Game Project",
@@ -1318,14 +1423,14 @@
    "end": "13:30",
    "course": "Projeto de Visualização de Informação",
    "groups": [
-    "LEIIG07D01",
+    "LEIIGS07D01",
     "LIGS005D01"
    ],
    "teachers": [
     "Ângela Isabel Maria Xavier Barros"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIG07D01_795_20261214.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIGS07D01_795_20261214.html",
    "date": "2026-12-15",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
