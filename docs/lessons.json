@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-28 12:52",
- "stamp": "20261028T125416Z",
- "all_sha": "6170eb4efb1c7d72436106dd1733e66596d2a737",
+ "updated": "2026-10-28 22:33",
+ "stamp": "20261028T223504Z",
+ "all_sha": "2c4fe6faeec6c3b61838204b2967da831f274a36",
  "lessons": [
   {
    "start": "11:00",
@@ -29,7 +29,7 @@
     "David Mendes Ramos"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261026.html",
    "date": "2026-10-28",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -104,7 +104,7 @@
     "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261026.html",
    "date": "2026-10-29",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -247,15 +247,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Tecnologias Emergentes para Jogos",
+   "course": "Projeto Multijogador / Multiplayer Project",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-04",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -322,15 +322,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
+   "course": "Tecnologias Emergentes para Jogos",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "Bernardo Rodrigues"
+    "David Mendes Ramos"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-05",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -473,15 +473,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Tecnologias Emergentes para Jogos",
+   "course": "Projeto Multijogador / Multiplayer Project",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-11",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -548,15 +548,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
+   "course": "Tecnologias Emergentes para Jogos",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "Bernardo Rodrigues"
+    "David Mendes Ramos"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-12",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -699,15 +699,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Tecnologias Emergentes para Jogos",
+   "course": "Projeto Multijogador / Multiplayer Project",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-18",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -774,15 +774,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
+   "course": "Tecnologias Emergentes para Jogos",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "Bernardo Rodrigues"
+    "David Mendes Ramos"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-19",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -925,15 +925,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Tecnologias Emergentes para Jogos",
+   "course": "Projeto Multijogador / Multiplayer Project",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Bernardo Rodrigues"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-25",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1000,15 +1000,15 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
+   "course": "Tecnologias Emergentes para Jogos",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "Bernardo Rodrigues"
+    "David Mendes Ramos"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026102620261123.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_2026110220261123.html",
    "date": "2026-11-26",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1090,12 +1090,12 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Tecnologias Emergentes para Jogos",
+   "course": "Projeto Multijogador / Multiplayer Project",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Bernardo Rodrigues"
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261130.html",
@@ -1165,12 +1165,12 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
+   "course": "Tecnologias Emergentes para Jogos",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "Bernardo Rodrigues"
+    "David Mendes Ramos"
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261130.html",
@@ -1255,12 +1255,12 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Tecnologias Emergentes para Jogos",
+   "course": "Projeto Multijogador / Multiplayer Project",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "David Mendes Ramos"
+    "Bernardo Rodrigues"
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261207.html",
@@ -1330,12 +1330,12 @@
   {
    "start": "14:00",
    "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
+   "course": "Tecnologias Emergentes para Jogos",
    "groups": [
     "LDJO005D01"
    ],
    "teachers": [
-    "Bernardo Rodrigues"
+    "David Mendes Ramos"
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261207.html",
@@ -1419,6 +1419,21 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
+   "start": "14:00",
+   "end": "16:00",
+   "course": "Projeto Multijogador / Multiplayer Project",
+   "groups": [
+    "LDJO005D01"
+   ],
+   "teachers": [
+    "Bernardo Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261214.html",
+   "date": "2026-12-16",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
    "start": "16:30",
    "end": "18:30",
    "course": "Projeto de Jogo em Grelha/Grid-Based Game Project",
@@ -1431,21 +1446,6 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO001D01_294_20261214.html",
    "date": "2026-12-16",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "14:00",
-   "end": "16:00",
-   "course": "Projeto Multijogador / Multiplayer Project",
-   "groups": [
-    "LDJO005D01"
-   ],
-   "teachers": [
-    "Bernardo Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO005D01_293_20261214.html",
-   "date": "2026-12-17",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
