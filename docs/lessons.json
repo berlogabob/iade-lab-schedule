@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-07 05:56",
- "stamp": "20261107T055823Z",
- "all_sha": "b453cdcd37fbac380f41d068402e2cbb76599678",
+ "updated": "2026-11-09 22:20",
+ "stamp": "20261109T222132Z",
+ "all_sha": "58fb71b13deda82d4d7a4dd83a9f9b799937ec27",
  "lessons": [
   {
    "start": "09:00",
@@ -76,6 +76,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
+   "date": "2026-11-10",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "19:00",
+   "end": "23:00",
+   "course": "Projeto de Design e Conceptualização de Jogos/Games Design and Conceptualization",
+   "groups": [
+    "MDPJ001N01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_MDPJ001N01_981_2026110920261123.html",
    "date": "2026-11-10",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -306,6 +321,21 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
+   "start": "19:00",
+   "end": "23:00",
+   "course": "Projeto de Design e Conceptualização de Jogos/Games Design and Conceptualization",
+   "groups": [
+    "MDPJ001N01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_MDPJ001N01_981_2026110920261123.html",
+   "date": "2026-11-17",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
    "start": "09:00",
    "end": "11:00",
    "course": "Frameworks para Jogos / Game Frameworks",
@@ -528,6 +558,21 @@
    ],
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
+   "date": "2026-11-24",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "19:00",
+   "end": "23:00",
+   "course": "Projeto de Design e Conceptualização de Jogos/Games Design and Conceptualization",
+   "groups": [
+    "MDPJ001N01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_MDPJ001N01_981_2026110920261123.html",
    "date": "2026-11-24",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -1058,6 +1103,21 @@
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
   {
+   "start": "19:00",
+   "end": "23:00",
+   "course": "Projeto de Design e Conceptualização de Jogos/Games Design and Conceptualization",
+   "groups": [
+    "MDPJ001N01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_MDPJ001N01_981_20261214.html",
+   "date": "2026-12-15",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
    "start": "11:00",
    "end": "13:30",
    "course": "Projeto V / Project V",
@@ -1115,6 +1175,36 @@
    "type": "P",
    "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO001D01_294_20261214.html",
    "date": "2026-12-18",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "19:00",
+   "end": "23:00",
+   "course": "Projeto de Design e Conceptualização de Jogos/Games Design and Conceptualization",
+   "groups": [
+    "MDPJ001N01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_MDPJ001N01_981_20270104.html",
+   "date": "2027-01-05",
+   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
+  },
+  {
+   "start": "19:00",
+   "end": "23:00",
+   "course": "Projeto de Design e Conceptualização de Jogos/Games Design and Conceptualization",
+   "groups": [
+    "MDPJ001N01"
+   ],
+   "teachers": [
+    "Eulerson Rodrigues"
+   ],
+   "type": "P",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_MDPJ001N01_981_20270111.html",
+   "date": "2027-01-12",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   }
  ]
