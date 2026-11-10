@@ -1,23 +1,8 @@
 {
- "updated": "2026-11-09 22:20",
- "stamp": "20261109T222132Z",
- "all_sha": "58fb71b13deda82d4d7a4dd83a9f9b799937ec27",
+ "updated": "2026-11-10 07:15",
+ "stamp": "20261110T071713Z",
+ "all_sha": "eb9cef0b0f37f9d6c3aa40105c73ba17679ab461",
  "lessons": [
-  {
-   "start": "09:00",
-   "end": "12:00",
-   "course": "Projeto de Jogo 2D/2D Game Design",
-   "groups": [
-    "LDJO003D01"
-   ],
-   "teachers": [
-    "Pamela Teubig"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026101220261123.html",
-   "date": "2026-11-09",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
   {
    "start": "08:30",
    "end": "11:00",
