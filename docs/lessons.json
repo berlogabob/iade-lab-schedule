@@ -1,23 +1,8 @@
 {
- "updated": "2026-11-13 19:40",
- "stamp": "20261113T194201Z",
- "all_sha": "c3cbf5b4b38c75ffccc89abb98c1dbbc269de705",
+ "updated": "2026-11-14 06:19",
+ "stamp": "20261114T062120Z",
+ "all_sha": "3cf7b578080e75e459543c39ef648abf6ecacda3",
  "lessons": [
-  {
-   "start": "14:00",
-   "end": "17:00",
-   "course": "Projeto de Jogo em Grelha/Grid-Based Game Project",
-   "groups": [
-    "LDJO001D01"
-   ],
-   "teachers": [
-    "José Graça"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO001D01_294_2026101220261123.html",
-   "date": "2026-11-13",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
   {
    "start": "09:00",
    "end": "12:00",
