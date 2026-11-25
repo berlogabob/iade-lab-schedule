@@ -1,84 +1,8 @@
 {
- "updated": "2026-11-24 22:24",
- "stamp": "20261124T222555Z",
- "all_sha": "b6541c5b21bb658daff9f0f4e86d1a2d12e1bad1",
+ "updated": "2026-11-25 08:30",
+ "stamp": "20261125T083146Z",
+ "all_sha": "ea8b23740356c2b3b56a90ca2ab5499d29c3e890",
  "lessons": [
-  {
-   "start": "08:30",
-   "end": "11:00",
-   "course": "Projeto de Realidade Virtual/Virtual Reality Design",
-   "groups": [
-    "LTCR003D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR003D01_434_2026110220261123.html",
-   "date": "2026-11-24",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "08:30",
-   "end": "11:00",
-   "course": "Projeto V / Project V",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
-   "date": "2026-11-24",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "11:30",
-   "end": "13:30",
-   "course": "Projeto de Visualização de Informação",
-   "groups": [
-    "LEIIGS07D01",
-    "LIGS005D01"
-   ],
-   "teachers": [
-    "Ângela Isabel Maria Xavier Barros"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LEIIGS07D01_795_2026110220261123.html",
-   "date": "2026-11-24",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "15:00",
-   "end": "17:00",
-   "course": "Design para Jogos / Game Design",
-   "groups": [
-    "LTCR005D01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LTCR005D01_435_2026110220261123.html",
-   "date": "2026-11-24",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
-  {
-   "start": "19:00",
-   "end": "23:00",
-   "course": "Projeto de Design e Conceptualização de Jogos/Games Design and Conceptualization",
-   "groups": [
-    "MDPJ001N01"
-   ],
-   "teachers": [
-    "Eulerson Rodrigues"
-   ],
-   "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_MDPJ001N01_981_2026110920261123.html",
-   "date": "2026-11-24",
-   "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
-  },
   {
    "start": "09:00",
    "end": "11:00",
