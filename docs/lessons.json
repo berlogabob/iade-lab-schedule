@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-27 08:28",
- "stamp": "20261127T082953Z",
- "all_sha": "fcb9e365a9a440edcefc3045f1915f8e956d83d8",
+ "updated": "2026-11-27 21:15",
+ "stamp": "20261127T211747Z",
+ "all_sha": "5b942f757c4d04925362e210ff6b3f96494cc73d",
  "lessons": [
   {
    "start": "14:00",
@@ -29,7 +29,7 @@
     "Pamela Teubig"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026113020261207.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_20261130.html",
    "date": "2026-11-30",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
@@ -194,7 +194,7 @@
     "Pamela Teubig"
    ],
    "type": "P",
-   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_2026113020261207.html",
+   "source_url": "https://horariosturmas.europeia.pt/UE_IADE/HorariosTurmas/turma_LDJO003D01_295_20261207.html",
    "date": "2026-12-07",
    "room": "Lab. e Estudo de Jogos - Tech Lab (Oriente)"
   },
